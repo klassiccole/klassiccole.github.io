@@ -1,0 +1,145 @@
+/* ITIS3135 Course Site
+   Daniel Dorazio's Daring Dragon
+   Default stylesheet
+*/
+
+body {
+    background-color: #f2eee6;
+    color: #293241;
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #7a4e48;
+    font-family: Georgia, serif;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #7a4e48;
+    font-family: Georgia, serif;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #7a4e48;
+    font-family: Georgia, serif;
+}
+
+h6 {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #293241;
+    margin: 1em 0;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+header {
+    border-bottom: 2px solid #7a4e48;
+    padding-bottom: 20px;
+}
+
+nav {
+    margin: 15px 0;
+}
+
+a {
+    color: #8a5a44;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #8a5a44;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+main {
+    margin: 30px 0;
+}
+
+section {
+    margin: 40px 0;
+}
+
+figure {
+    margin: 30px auto;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+blockquote {
+    margin: 30px 40px;
+    padding-left: 20px;
+    border-left: 4px solid #7a4e48;
+}
+
+blockquote p {
+    margin-bottom: 5px;
+}
+
+cite {
+    font-style: italic;
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid #7a4e48;
+    font-size: 0.9rem;
+}
+
+.contract-layout {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.contract-layout figure {
+    margin: 0;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    nav {
+        line-height: 2;
+    }
+
+    blockquote {
+        margin: 30px 10px;
+    }
+
+    .contract-layout {
+        grid-template-columns: 1fr;
+    }
+}
