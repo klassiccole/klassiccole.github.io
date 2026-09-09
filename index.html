@@ -18,12 +18,26 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1 {
+            font-family: Montserrat, serif;
+            color: #f0b67f;
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-family: Montserrat, serif;
+            color: #f0b67f;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        h3 {
             font-family: Georgia, serif;
             color: #f0b67f;
         }
 
-        header, footer {
+        header,
+        footer {
             text-align: center;
         }
 
@@ -59,6 +73,21 @@
             margin: 40px 0;
         }
 
+        .about {
+            display: flow-root;
+        }
+
+        .about figure {
+            float: right;
+            width: 34%;
+            margin: 0 0 20px 40px;
+        }
+
+        .about figure img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
         footer {
             margin-top: 50px;
             font-size: 0.9rem;
@@ -68,8 +97,23 @@
             body {
                 padding: 20px;
             }
+
+            @media (max-width: 600px) {
+                body {
+                    padding: 20px;
+                }
+
+                .about figure {
+                    float: none;
+                    width: 100%;
+                    margin: 30px auto;
+                }
+
+                .about figure img {
+                    max-width: 60%;
+                }
+            }
         }
-        
     </style>
 
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -82,36 +126,37 @@
 
     <main>
         <h2>Welcome!</h2>
-        <section>
+        <section class="about">
             <h3>About Me</h3>
+
+            <figure>
+                <img src="itis3135/images/self.webp"
+                    alt="Cole Dorazio riding a Kawasaki Vulcan at Brown Mountain"
+                    width="753"
+                    height="753">
+                <figcaption>Riding my Kawasaki Vulcan at Brown Mountain</figcaption>
+            </figure>
 
             <p>
                 Hi, I'm Cole. I'm a student at UNC Charlotte with a strong
                 interest in technology and building anything related to tech.
             </p>
+
             <p>
                 My interests range from computers and web development to
-                photography, videography, and FPV drones. I enjoy developing new skills and turning
-                ideas into something tangible.
+                photography, videography, and FPV drones. I enjoy developing new
+                skills and turning ideas into something tangible.
             </p>
-            <figure>
-                <img src="itis3135/images/self.webp"
-                alt="Cole Dorazio riding a Kawasaki Vulcan at Brown Mountain"
-                width="753"
-                height="753">
-                <figcaption>Riding my Kawasaki Vulcan at Brown Mountain</figcaption>
-            </figure>
-        </section>
 
-        <section>
             <h3>Interests</h3>
-                <ul>
-                    <li>Photography and videography</li>
-                    <li>FPV drones and aerial imaging</li>
-                    <li>Motorcycles and riding</li>
-                    <li>Web development</li>
-                    <li>3D printing and hands-on projects</li>
-                </ul>
+
+            <ul>
+                <li>Photography and videography</li>
+                <li>FPV drones and aerial imaging</li>
+                <li>Motorcycles and riding</li>
+                <li>Web development</li>
+                <li>3D printing and hands-on projects</li>
+            </ul>
         </section>
 
         <section>
