@@ -15,19 +15,19 @@ body {
 
 h1 {
     color: #7a4e48;
-    font-family: Georgia, serif;
+    font-family: Montserrat, serif;
     margin-bottom: 10px;
 }
 
 h2 {
     color: #7a4e48;
-    font-family: Georgia, serif;
+    font-family: Montserrat, serif;
     margin-top: 30px;
 }
 
 h3 {
     color: #7a4e48;
-    font-family: Georgia, serif;
+    font-family: Montserrat, serif;
 }
 
 h6 {
@@ -125,6 +125,37 @@ footer {
     margin: 0;
 }
 
+.about-course {
+    display: flow-root;
+}
+
+.about-course figure {
+    float: right;
+    width: 35%;
+    margin: 0 0 20px 40px;
+}
+
+.about-course figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.course-welcome {
+    display: flow-root;
+}
+
+.course-welcome figure {
+    float: right;
+    width: 30%;
+    margin: 0 0 20px 40px;
+}
+
+.course-welcome figure img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
 /* Mobile layout */
 @media (max-width: 600px) {
     body {
