@@ -52,6 +52,14 @@ nav {
     margin: 15px 0;
 }
 
+/* Secondary menu sits under the primary nav and is deliberately quieter. */
+header nav + nav {
+    margin: 0;
+    padding-top: 10px;
+    border-top: 1px solid #d8cfc4;
+    font-size: 0.85rem;
+}
+
 a {
     color: #8a5a44;
     text-decoration: none;
