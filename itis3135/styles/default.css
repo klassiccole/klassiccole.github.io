@@ -125,37 +125,35 @@ footer {
     margin: 0;
 }
 
+/* Shared float layout so the home and about photos render identically. */
+.course-welcome,
 .about-course {
     display: flow-root;
 }
 
+.course-welcome figure,
 .about-course figure {
-    float: right;
-    width: 35%;
-    margin: 0 0 20px 40px;
-}
-
-.about-course figure img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-.course-welcome {
-    display: flow-root;
-}
-
-.course-welcome figure {
     float: right;
     width: 30%;
     margin: 0 0 20px 40px;
 }
 
-.course-welcome figure img {
+.course-welcome figure img,
+.about-course figure img,
+.intro-photo img,
+.contract-layout figure img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
 }
+
+/* The intro photo stays centered per the introduction page standard. */
+.intro-photo {
+    width: 30%;
+    margin: 30px auto;
+}
+
 /* Mobile layout */
 @media (max-width: 600px) {
     body {
