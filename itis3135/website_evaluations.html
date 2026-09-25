@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Website Evaluations</title>
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/default.css">
+
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Website Evaluations</h2>
+
+        <p>
+            Two sites judged against the CRAP principles of design: Contrast,
+            Repetition, Alignment, and Proximity. One gets them right, and one
+            gets them very wrong.
+        </p>
+
+        <section>
+            <h3><a href="https://makerworld.com/en" target="_blank">MakerWorld</a></h3>
+
+            <ul>
+                <li>
+                    <strong>Contrast:</strong> Product photos carry the page
+                    while the interface stays quiet, so the eye lands on the
+                    models instead of the chrome. Titles sit much heavier and
+                    darker than the creator and download metadata beside them,
+                    and the primary buttons use a saturated accent that reads
+                    instantly against the neutral card background.
+                </li>
+                <li>
+                    <strong>Repetition:</strong> One card component repeats
+                    across the whole grid, and it repeats exactly: same
+                    thumbnail ratio, same title and metadata positions, same
+                    hover treatment. Navigation, tag chips, and buttons reuse
+                    the same type sizes and colors on every screen, so the site
+                    feels like a single place rather than a collection of pages.
+                </li>
+                <li>
+                    <strong>Alignment:</strong> The model cards lock to a strict
+                    multi-column grid with even gutters, and every card's title,
+                    creator, and stats share the same left edge. Filter controls
+                    line up with the grid they affect, so nothing looks adrift.
+                </li>
+                <li>
+                    <strong>Proximity:</strong> Everything about one model
+                    lives inside one bounded card, and the search and filter
+                    controls are grouped together above the grid. Related
+                    things sit close and unrelated things stay apart, so the
+                    page reads without hunting.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3><a href="https://freecampsites.net/" target="_blank">FreeCampsites.net</a></h3>
+
+            <ul>
+                <li>
+                    <strong>Contrast:</strong> It reads as a wall of small
+                    text. The stylesheet leans on 10px and .8em body copy, has a
+                    6px rule, and uses low-contrast grays like #72777c and
+                    #6c6c6c on white. Links fall back to pure blue and navy,
+                    which fight the teal and orange branding, and the ad blocks
+                    are so visually loud that it is hard to tell content from
+                    advertising.
+                </li>
+                <li>
+                    <strong>Repetition:</strong> There is no consistent
+                    component system. The stylesheet defines 34 whites and 17
+                    blacks alongside teal, pure blue, navy, red, and orange, so
+                    buttons, headings, and links all look like they came from
+                    different sites. It also stacks Helvetica, Arial, Verdana,
+                    Geneva, and Courier New, and patches 87 inline styles over
+                    the top instead of repeating one rule.
+                </li>
+                <li>
+                    <strong>Alignment:</strong> The layout is built from 360
+                    divs and three tables, with only one of its 25 images given
+                    width and height. Images resizing on load shove the columns
+                    around, and ad blocks and listings each sit at their own
+                    width, so nothing shares a stable edge or grid.
+                </li>
+                <li>
+                    <strong>Proximity:</strong> Ads are interleaved with the
+                    listings and map, so promotions and search results run
+                    together with no grouping. The page uses five h2s and no
+                    h3s, so nothing signals what belongs under what, and related
+                    controls are scattered as separate headings instead of being
+                    kept together.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/include.min.js"></script>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
