@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Hand-drawn chat bubble with sparkles">
+  <rect width="400" height="240" rx="18" fill="#2b2e5e"/>
+  <path d="M70 60 h200 a24 24 0 0 1 24 24 v70 a24 24 0 0 1 -24 24 h-96 l-40 36 4 -36 h-68 a24 24 0 0 1 -24 -24 v-70 a24 24 0 0 1 24 -24 z"
+        fill="#ff5fa2" stroke="#ffd93d" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="128" cy="118" r="11" fill="#4fe3e8"/>
+  <circle cx="172" cy="118" r="11" fill="#ffd93d"/>
+  <circle cx="216" cy="118" r="11" fill="#f3f1ff"/>
+  <path d="M300 60 l7 20 20 7 -20 7 -7 20 -7 -20 -20 -7 20 -7 z" fill="#ffd93d"/>
+  <path d="M338 120 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5 z" fill="#4fe3e8"/>
+  <path d="M296 160 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4 z" fill="#ff5fa2"/>
+</svg>

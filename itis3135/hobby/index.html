@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rollerblading &amp; Rollerskating ✦ What</title>
+
+    <link rel="icon" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Embedded stylesheet: this hobby site is a single page, so there is no default.css. */
+        :root {
+            --h1-size: 2.4rem;
+            --ink: #14162e;
+            --surface: #20224a;
+            --surface-2: #2b2e5e;
+            --pink: #ff5fa2;
+            --cyan: #4fe3e8;
+            --yellow: #ffd93d;
+            --text: #f3f1ff;
+            --muted: #b9b6dd;
+        }
+
+        body {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+            background: var(--ink);
+            color: var(--text);
+            font-family: "Rubik", Verdana, sans-serif;
+            line-height: 1.65;
+        }
+
+        h1 {
+            font-family: "Righteous", Impact, sans-serif;
+            letter-spacing: 0.5px;
+            color: var(--yellow);
+            font-size: var(--h1-size);
+            margin-bottom: 4px;
+        }
+
+        h2 {
+            font-family: "Righteous", Impact, sans-serif;
+            letter-spacing: 0.5px;
+            color: var(--cyan);
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        .tagline {
+            color: var(--muted);
+            margin-top: 0;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 18px;
+            border-bottom: 4px solid var(--surface-2);
+        }
+
+        nav {
+            margin-top: 18px;
+            font-family: "Righteous", Impact, sans-serif;
+        }
+
+        nav a {
+            color: var(--pink);
+            text-decoration: none;
+            padding: 4px 2px;
+        }
+
+        nav a.current {
+            color: var(--yellow);
+        }
+
+        main {
+            margin: 32px 0;
+        }
+
+        section {
+            background: var(--surface);
+            border-left: 8px solid var(--pink);
+            border-radius: 18px;
+            padding: 26px 28px;
+            margin-bottom: 26px;
+        }
+
+        .panel {
+            display: none;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        p,
+        li,
+        td,
+        th {
+            font-size: 1rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--pink);
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: var(--pink);
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--yellow);
+            text-decoration: underline;
+        }
+
+        figure {
+            margin: 22px 0;
+            background: var(--surface-2);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        figure p {
+            color: var(--muted);
+            margin: 6px 0 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 2px solid var(--surface-2);
+        }
+
+        th {
+            color: var(--yellow);
+            font-family: "Righteous", Impact, sans-serif;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 22px;
+            border-top: 4px solid var(--surface-2);
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .validators a {
+            display: inline-block;
+            margin: 6px 5px 0;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--surface);
+            color: var(--cyan);
+            font-family: "Righteous", Impact, sans-serif;
+        }
+
+        .validators a:hover,
+        .validators a:focus {
+            background: var(--surface-2);
+            color: var(--yellow);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 14px;
+            }
+
+            :root {
+                --h1-size: 1.8rem;
+            }
+
+            section {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Rollerblading &amp; Rollerskating</h1>
+        <p class="tagline"><em>Eight wheels, one good time.</em></p>
+
+        <nav>
+            <a href="#what">What</a> ✦
+            <a href="#who">Who</a> ✦
+            <a href="#when">When</a> ✦
+            <a href="#where">Where</a> ✦
+            <a href="#how">How</a> ✦
+            <a href="#why">Why</a> ✦
+            <a href="#ai-prompts">AI Prompts</a>
+        </nav>
+    </header>
+
+    <!-- The panel class and each section id are what the single-page navigation swaps. -->
+    <main>
+        <section id="what" class="panel">
+            <h2>What</h2>
+            <p>
+                Rollerblading and rollerskating are the same idea on two
+                different skate setups. Inline skates, usually called
+                rollerblades, hold their wheels in a single row under the boot,
+                which makes them fast and nimble. Quad skates hold two pairs of
+                wheels side by side, which makes them stable and easy to steer.
+                Either way, you strap wheels to your feet and the pavement turns
+                into a playground.
+            </p>
+            <p>
+                It costs far less than most hobbies to start, it works as
+                transport, exercise, or a whole afternoon at a park, and it
+                scales from a slow lap around the block to a full session in a
+                bowl. You can pick it up at any age and keep going for decades
+                &mdash; in Charlotte, a single green light downtown can turn
+                into a rolling crowd like the one below.
+            </p>
+            <ul>
+                <li>Fitness and urban skating: long, smooth distance on trails and streets</li>
+                <li>Aggressive skating: grinds, airs, and rails at the skate park</li>
+                <li>Speed skating: laps and races on inline racing skates</li>
+                <li>Roller derby: full-contact quad skating on a flat track</li>
+                <li>Artistic skating: spins, jumps, and routines set to music</li>
+                <li>Rink and recreational skating: the classic Friday-night roll</li>
+            </ul>
+
+            <figure>
+                <img src="images/what-skate.jpg" alt="A large group of skaters and riders gathered at the Camden Road crosswalk in Charlotte's South End" width="800" height="379">
+                <figcaption>A random green light in South End turns into a rolling crowd.
+                    <p><em>Photo of my own, not AI-generated: the Charlotte street skate crew taking over the intersection at Camden Road.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="who" class="panel">
+            <h2>Who</h2>
+            <p>
+                This page is mine. I am Cole, and I have been on wheels since I
+                was ten years old. Somewhere along the way the casual rolling
+                turned into aggressive inline skating: park skating built around
+                jumps, grinds, and spins. I skate with
+                <a href="https://www.instagram.com/letsskatecharlotte/">@letsskatecharlotte</a>,
+                a local group that takes over downtown spots, and that crew is
+                half the reason I keep lacing up. Skating has even paid a
+                little: I appeared in a commercial for Impala Skate, which is
+                still the coolest credit on my resume.
+            </p>
+            <p>
+                The best part is who else shows up. Rinks, derby leagues, and
+                skate parks are full of people who will happily tell a stranger
+                which wheel hardness to buy. It is a solo sport with a group
+                chat attached.
+            </p>
+            <ul>
+                <li>Aggressive inline skaters chasing rails, ledges, and airs</li>
+                <li>Kids on their first pair of adjustable quads</li>
+                <li>Commuter bladers cutting through downtown</li>
+                <li>Derby players who practice three nights a week</li>
+                <li>Anyone who just wants low-impact cardio that does not feel like a gym</li>
+            </ul>
+
+            <figure>
+                <img src="images/who-skater.jpg" alt="Skater in a black hoodie and sunglasses sitting on the yellow coping of a concrete park ledge" width="800" height="800">
+                <figcaption>Between runs at the park, wondering how many tries this line deserves.
+                    <p><em>Photo of my own, not AI-generated: catching my breath on the ledge between sessions.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="when" class="panel">
+            <h2>When</h2>
+            <p>
+                Late spring through early fall is prime season: warm pavement,
+                long daylight, and dry asphalt. Summer early mornings and
+                evenings are the sweet spot, because midday heat makes the
+                surface soft and the ride slow. Winter does not end the hobby
+                either, it just moves it indoors to a rink.
+            </p>
+            <p>
+                As for time of day, an hour before sunset is hard to beat. The
+                pavement has cooled, the light is low and flat, and the park is
+                nearly empty. Weekend sessions &mdash; whether it is a rink, a
+                rainbow-colored pop-up court, or a downtown street skate &mdash;
+                are the loudest, friendliest hours of the week.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>When</th>
+                        <th>Best For</th>
+                        <th>Why</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Weekday mornings</td>
+                        <td>Trail and commuting</td>
+                        <td>Empty paths, cool asphalt</td>
+                    </tr>
+                    <tr>
+                        <td>Weekday evenings</td>
+                        <td>Park sessions</td>
+                        <td>The park crowd shows up after work</td>
+                    </tr>
+                    <tr>
+                        <td>Weekend afternoons</td>
+                        <td>Group skates and events</td>
+                        <td>The whole crew shows up</td>
+                    </tr>
+                    <tr>
+                        <td>Winter</td>
+                        <td>Indoor rinks</td>
+                        <td>Weather does not matter inside</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="images/when-seasons.jpg" alt="Skaters in colorful outfits posing together on a rainbow-painted outdoor rink under string lights" width="800" height="533">
+                <figcaption>Weekend warmth with part of the Impala commercial crew.
+                    <p><em>Photo of my own, not AI-generated: the cast of the Impala Skate commercial I appeared in, between takes on an outdoor pop-up rink.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="where" class="panel">
+            <h2>Where</h2>
+            <p>
+                Any smooth, legal, low-traffic surface works. Multi-use greenways
+                and paved trails are the easy answer, and most cities have more
+                of them than people realize. Skate parks are the other half of
+                the hobby, built specifically for ramps, bowls, ledges, and
+                rails. Downtown streets count too: ledges, gaps, and stair sets
+                turn ordinary architecture into a course.
+            </p>
+            <p>
+                Rinks still exist and are worth finding, especially in winter or
+                after dark. Parking decks at night, empty tennis courts, and
+                freshly paved subdivision streets round out the list. Check the
+                surface first: rough chip-seal and gravel are miserable on small
+                wheels.
+            </p>
+            <ul>
+                <li>Municipal skate parks for ramps, bowls, ledges, and rails</li>
+                <li>Paved greenways and rail trails for distance</li>
+                <li>Downtown plazas and stair sets for street lines</li>
+                <li>Indoor and outdoor rinks for smooth, level laps</li>
+                <li>Empty parking decks and courts after hours</li>
+            </ul>
+
+            <figure>
+                <img src="images/where-park.jpg" alt="Aggressive inline skater locking into a grind on a rail beside a yellow-edged ramp" width="800" height="800">
+                <figcaption>A rail at the local park &mdash; the other half of skating.
+                    <p><em>Photo of my own, not AI-generated: locking into a grind at the skatepark.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="how" class="panel">
+            <h2>How</h2>
+            <p>
+                Start with the gear that keeps you upright: a helmet, wrist
+                guards, knee pads, and elbow pads. The pads are not optional
+                when you are learning, because almost every beginner fall lands
+                on a wrist. Then pick a skate that matches the plan: quads for
+                stability and rink work, inlines for distance and speed.
+            </p>
+            <p>
+                Check the wheels before every session and rotate them as they
+                wear, since the inside edge always goes first. Learn to stop
+                early, because rolling confidently and stopping confidently are
+                the same skill.
+            </p>
+            <ol>
+                <li>Gear up: helmet, wrist guards, knee and elbow pads</li>
+                <li>Pick skates for the surface and style you actually want</li>
+                <li>Find a flat, smooth, empty space with nothing to hit</li>
+                <li>Practice stance, then gliding, then the heel brake</li>
+                <li>Learn to fall forward onto your pads instead of backward</li>
+                <li>Increase distance or difficulty only after the basics feel boring</li>
+            </ol>
+
+            <figure>
+                <img src="images/how-anatomy.jpg" alt="Side profile of an inline skater rolling on a brick path, showing the boot, frame, and wheels in profile" width="750" height="780">
+                <figcaption>A clean side profile: boot, frame, and all four wheels.
+                    <p><em>Photo of my own, not AI-generated: rolling a brick plaza, profile view.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="why" class="panel">
+            <h2>Why</h2>
+            <p>
+                Skating is the rare exercise that does not feel like one. You
+                are moving through a place instead of staring at a wall, and the
+                speed is entirely yours to set. It is also genuinely low-impact,
+                which makes it kind to knees that have had enough of running.
+            </p>
+            <p>
+                The other reason is smaller and better: skating makes ordinary
+                places interesting. A parking lot becomes a spot. A stair set
+                becomes a gap. A donut-shop wall becomes the backdrop for the
+                best photo of the year. That is a good trade for a pair of boots
+                with wheels on them.
+            </p>
+            <ul>
+                <li>Low-impact cardio that is easy on the knees</li>
+                <li>Real transport, not just exercise</li>
+                <li>Balance and coordination that carry into everything else</li>
+                <li>The specific joy of landing something you have bailed fifty times</li>
+                <li>A community that is genuinely happy to see beginners</li>
+            </ul>
+
+            <figure>
+                <img src="images/why-roll.jpg" alt="Skater mid-air during a jump in front of a brick wall painted with colorful donuts" width="800" height="800">
+                <figcaption>Mid-air in front of the donut wall: the whole why in one frame.
+                    <p><em>Photo of my own, not AI-generated: a jump in front of Charlotte's donut-wall mural.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="ai-prompts" class="panel">
+            <h2>AI Prompts</h2>
+            <p>
+                AI was used for the code and draft text on this page, not for
+                the artwork. The layout, embedded stylesheet, and
+                section-switching script were written with an assistant, and
+                the prompts below describe that work. Every photo in this site
+                is my own &mdash; shot at Charlotte parks, plazas, and group
+                skates &mdash; and none of the images were generated by AI.
+            </p>
+            <ol>
+                <li>Build a single-file hobby page with seven switchable sections (What, Who, When, Where, How, Why, AI Prompts), an embedded stylesheet, and JavaScript so only one section shows at a time.</li>
+                <li>Use a dark indigo, hot pink, cyan, and yellow color scheme with no Times New Roman, no default blue links, and no plain white background.</li>
+                <li>Write the Who section from my details: skating since age ten, aggressive inline park skating, and the @letsskatecharlotte downtown group.</li>
+                <li>Rewrite every figure caption to match my own photos instead of generated images.</li>
+            </ol>
+            <p>
+                The prompts were iterative: I asked for the structure first,
+                then tuned color and content, then swapped every placeholder
+                caption for text describing these photographs.
+            </p>
+
+            <figure>
+                <img src="images/ai-prompts.svg" alt="Hand-drawn chat bubble with sparkles in the site palette" width="400" height="240">
+                <figcaption>A hand-coded icon for the prompt list, drawn to match the palette.
+                    <p><em>Drawn by hand as an inline SVG asset &mdash; the only graphic here not produced by a camera or a generator.</em></p>
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p><em>Rollerblading &amp; Rollerskating ✦ Keep the wheels down and the good times rolling.</em></p>
+
+        <p class="validators">
+            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fddorazio%2Fitis3135%2Fhobby%2F">Validate HTML</a>
+            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwebpages.charlotte.edu%2Fddorazio%2Fitis3135%2Fhobby%2F">Validate CSS</a>
+            <a href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/ddorazio/itis3135/hobby/">Check Accessibility</a>
+        </p>
+
+        <p>Designed by <a href="../doraziodesigns.com/">Dorazio Designs</a></p>
+    </footer>
+
+    <script>
+        /* Single-page navigation: one section visible at a time, What by default. */
+        (function () {
+            var panels = document.querySelectorAll("main section");
+            var links = document.querySelectorAll("header nav a");
+
+            function show(id) {
+                var found = false;
+                panels.forEach(function (panel) {
+                    var on = panel.id === id;
+                    panel.classList.toggle("active", on);
+                    if (on) {
+                        found = true;
+                    }
+                });
+                if (!found && panels.length) {
+                    panels[0].classList.add("active");
+                }
+                links.forEach(function (link) {
+                    link.classList.toggle("current", link.getAttribute("href") === "#" + id);
+                });
+                var active = document.querySelector("main section.active");
+                var heading = active ? active.querySelector("h2") : null;
+                document.title = "Rollerblading & Rollerskating ✦ " + (heading ? heading.textContent.trim() : "What");
+            }
+
+            function fromHash() {
+                var id = (window.location.hash || "#what").slice(1);
+                show(document.getElementById(id) ? id : "what");
+            }
+
+            window.addEventListener("hashchange", fromHash);
+            fromHash();
+        })();
+    </script>
+
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
