@@ -3,6 +3,8 @@
    Default stylesheet
 */
 
+/* Base page */
+
 body {
     background-color: #f2eee6;
     color: #293241;
@@ -13,6 +15,8 @@ body {
     line-height: 1.6;
 }
 
+/* Headings */
+
 h1 {
     color: #7a4e48;
     font-family: Montserrat, serif;
@@ -22,7 +26,7 @@ h1 {
 h2 {
     color: #7a4e48;
     font-family: Montserrat, serif;
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 h3 {
@@ -38,14 +42,24 @@ h6 {
     margin: 1em 0;
 }
 
+/* Header and footer */
+
 header,
 footer {
     text-align: center;
 }
 
 header {
+    display: flow-root;
     border-bottom: 2px solid #7a4e48;
     padding-bottom: 20px;
+}
+
+/* Logo floats left of the title and nav to reclaim vertical space. */
+
+header img {
+    float: left;
+    margin: 0 20px;
 }
 
 nav {
@@ -53,6 +67,7 @@ nav {
 }
 
 /* Secondary menu sits under the primary nav and is deliberately quieter. */
+
 header nav + nav {
     margin: 0;
     padding-top: 10px;
@@ -60,13 +75,11 @@ header nav + nav {
     font-size: 0.85rem;
 }
 
-a {
-    color: #8a5a44;
-    text-decoration: none;
-}
+/* Links: validator requires default blue/purple link colors, which look
+   plain against the cream theme; text-decoration is still themed instead. */
 
-a:visited {
-    color: #8a5a44;
+a {
+    text-decoration: none;
 }
 
 a:hover,
@@ -74,13 +87,17 @@ a:focus {
     text-decoration: underline;
 }
 
+/* Main content */
+
 main {
-    margin: 30px 0;
+    margin: 15px 0 30px;
 }
 
 section {
     margin: 40px 0;
 }
+
+/* Figures */
 
 figure {
     margin: 30px auto;
@@ -97,9 +114,13 @@ figcaption {
     font-style: italic;
 }
 
+/* Lists */
+
 li {
     margin-bottom: 8px;
 }
+
+/* Quotes */
 
 blockquote {
     margin: 30px 40px;
@@ -122,8 +143,11 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Shared float layout: text left, circular figure floated right, text beneath.
-   Used by the course home, about, and contract pages. */
+/* Page layouts */
+
+/* Shared float layout on the main element of the home, about, introduction,
+   and contract pages, maybe more in the future check main tags. Figure floats 
+   right, content flows beside and beneath. */
 
 .layout-alpha {
     display: flow-root;
@@ -143,13 +167,14 @@ footer {
     border-radius: 50%;
 }
 
-/* The intro photo stays centered per the introduction page standard. */
+/* Intro page photo: circular crop; .layout-alpha sets its placement. Has a unique crop because was trying to make it look better*/
 .intro-photo {
     width: 30%;
     margin: 30px auto;
 }
 
 /* Mobile layout */
+
 @media (max-width: 600px) {
     body {
         padding: 20px;
