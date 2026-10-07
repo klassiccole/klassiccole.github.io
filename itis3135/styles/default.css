@@ -122,34 +122,21 @@ footer {
     font-size: 0.9rem;
 }
 
-.contract-layout {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 30px;
-    align-items: start;
-}
+/* Shared float layout: text left, circular figure floated right, text beneath.
+   Used by the course home, about, and contract pages. */
 
-.contract-layout figure {
-    margin: 0;
-}
-
-/* Shared float layout so the home and about photos render identically. */
-.course-welcome,
-.about-course {
+.layout-alpha {
     display: flow-root;
 }
 
-.course-welcome figure,
-.about-course figure {
+.layout-alpha figure {
     float: right;
     width: 30%;
     margin: 0 0 20px 40px;
 }
 
-.course-welcome figure img,
-.about-course figure img,
-.intro-photo img,
-.contract-layout figure img {
+.layout-alpha figure img,
+.intro-photo img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -174,9 +161,5 @@ footer {
 
     blockquote {
         margin: 30px 10px;
-    }
-
-    .contract-layout {
-        grid-template-columns: 1fr;
     }
 }
