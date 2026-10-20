@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Survey Form</title>
+    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Customer Survey</title>
 
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/default.css">
@@ -18,10 +18,12 @@
     <main>
         <h2>Customer Survey</h2>
 
+        <!-- class="brand-intro": themed intro banner shared by all five coffee pages; styling hook for styles/coffee.css -->
         <section class="brand-intro">
             <p><strong>The Fired Bean</strong> — roasted by an actual dragon, so you know the beans came out fire-kissed. Tell us how we're doing and help us stock the shelf with what you actually drink.</p>
         </section>
 
+        <!-- class="coffee-form" scopes the survey styling in coffee.css; every input's id exists to pair it with its label's for attribute -->
         <form class="coffee-form" action="#" method="post">
             <fieldset>
                 <legend>About You</legend>
@@ -54,6 +56,7 @@
                 </select>
 
                 <p>Preferred roast:</p>
+                <!-- class="choice" un-bolds and inlines the label styling for radio/checkbox rows -->
                 <label class="choice" for="roast-light">
                     <input type="radio" id="roast-light" name="roast" value="light" required> Light — let the bean speak
                 </label>
