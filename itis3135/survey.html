@@ -7,6 +7,7 @@
 
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/coffee.css">
 
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +16,88 @@
     <div data-include="components/header.html"></div>
 
     <main>
-        <h2>Survey Form</h2>
+        <h2>Customer Survey</h2>
+
+        <section class="brand-intro">
+            <p><strong>The Fired Bean</strong> — roasted by an actual dragon, so you know the beans came out fire-kissed. Tell us how we're doing and help us stock the shelf with what you actually drink.</p>
+        </section>
+
+        <form class="coffee-form" action="#" method="post">
+            <fieldset>
+                <legend>About You</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Order</legend>
+                <label for="drink">Favorite drink:</label>
+                <select id="drink" name="drink" required>
+                    <option value="">--Choose a drink--</option>
+                    <option value="espresso">Espresso</option>
+                    <option value="cappuccino">Cappuccino</option>
+                    <option value="latte">Latte</option>
+                    <option value="pourover">Pour Over</option>
+                    <option value="coldbrew">Cold Brew</option>
+                    <option value="dragonbreath">Dragon's Breath Blend (house special)</option>
+                </select>
+
+                <label for="homebrew">When you brew at home, what's in the machine?</label>
+                <select id="homebrew" name="homebrew">
+                    <option value="bustelo">Café Bustelo — like the founder</option>
+                    <option value="ours">Whatever I bought here</option>
+                    <option value="instant">Instant (do not tell the dragon)</option>
+                    <option value="none">I only drink at the café</option>
+                </select>
+
+                <p>Preferred roast:</p>
+                <label class="choice" for="roast-light">
+                    <input type="radio" id="roast-light" name="roast" value="light" required> Light — let the bean speak
+                </label>
+                <label class="choice" for="roast-medium">
+                    <input type="radio" id="roast-medium" name="roast" value="medium"> Medium — balanced, dependable
+                </label>
+                <label class="choice" for="roast-dark">
+                    <input type="radio" id="roast-dark" name="roast" value="dark"> Dark — char it like a dragon would
+                </label>
+
+                <p>Pick your extras:</p>
+                <label class="choice" for="extra-oat">
+                    <input type="checkbox" id="extra-oat" name="extras" value="oat"> Oat milk
+                </label>
+                <label class="choice" for="extra-vanilla">
+                    <input type="checkbox" id="extra-vanilla" name="extras" value="vanilla"> House vanilla syrup
+                </label>
+                <label class="choice" for="extra-cinnamon">
+                    <input type="checkbox" id="extra-cinnamon" name="extras" value="cinnamon"> Cinnamon dusting
+                </label>
+                <label class="choice" for="extra-none">
+                    <input type="checkbox" id="extra-none" name="extras" value="none"> Nothing — drink it black
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Verdict</legend>
+                <label for="satisfaction">Overall satisfaction (1 = burnt puck, 10 = perfect crema):</label>
+                <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="8">
+
+                <label for="frequency">How often do you visit?</label>
+                <select id="frequency" name="frequency">
+                    <option value="daily">Daily — the dragon knows my order</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="first">This is my first visit</option>
+                </select>
+
+                <label for="comments">Anything the dragon should know?</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Compliments for the roaster, requests for new beans, warnings about steam wand etiquette..."></textarea>
+            </fieldset>
+
+            <button type="submit">Send It to the Roost</button>
+        </form>
     </main>
 
     <div data-include="components/footer.html"></div>

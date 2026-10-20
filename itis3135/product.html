@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Product Landing</title>
+    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Product Landing Page</title>
 
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/coffee.css">
 
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +16,71 @@
     <div data-include="components/header.html"></div>
 
     <main>
-        <h2>Product Landing</h2>
+        <section class="hero">
+            <h2>Dragon's Breath Blend</h2>
+            <p>Our signature dark roast, finished the only way a dragon can: with a slow, even pass of actual dragonfire. Molasses-deep, campfire-smooth, and never — ever — burnt.</p>
+            <a class="cta" href="#subscribe">Get It Shipped</a>
+        </section>
+
+        <section>
+            <h3>Why It Roars</h3>
+            <div class="feature-grid">
+                <article>
+                    <h4>Flame-Finished</h4>
+                    <p>Traditional drum roasting gets the bean 90% of the way. The last 10% is one controlled breath from the roaster himself. No gas burner has ever matched it.</p>
+                </article>
+                <article>
+                    <h4>Roasted This Week</h4>
+                    <p>Every subscription box is filled from beans roasted within the past seven days. If it has sat past its prime, the dragon smells it, and it does not ship.</p>
+                </article>
+                <article>
+                    <h4>Card In Every Bag</h4>
+                    <p>Each 8 oz bag includes one Dragon's Breath Reserve trading card. Collect six, bring the set in, and your tenth bag is on the house.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="subscribe">
+            <h3>Pick Your Roast Schedule</h3>
+            <div class="price-grid">
+                <div class="price-tier">
+                    <h4>Hatchling</h4>
+                    <span class="price">$14 / month</span>
+                    <ul>
+                        <li>One 8 oz bag per month</li>
+                        <li>One trading card</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a class="cta-button" href="#">Start Hatchling</a>
+                </div>
+                <div class="price-tier">
+                    <h4>Wyvern</h4>
+                    <span class="price">$26 / month</span>
+                    <ul>
+                        <li>Two 8 oz bags per month</li>
+                        <li>Two trading cards</li>
+                        <li>Free mug at month three</li>
+                    </ul>
+                    <a class="cta-button" href="#">Go Wyvern</a>
+                </div>
+                <div class="price-tier">
+                    <h4>Elder Dragon</h4>
+                    <span class="price">$48 / month</span>
+                    <ul>
+                        <li>Four 8 oz bags per month</li>
+                        <li>Full card set each quarter</li>
+                        <li>First crack at Reserve lots</li>
+                    </ul>
+                    <a class="cta-button" href="#">Rise, Elder</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <h3>Still Brewing On It?</h3>
+            <p>The dragon respects caution, but the Reserve lot sells out every month. Walk in, or let the fire come to you.</p>
+            <a class="cta-button" href="#">Subscribe Now</a>
+        </section>
     </main>
 
     <div data-include="components/footer.html"></div>

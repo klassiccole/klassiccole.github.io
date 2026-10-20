@@ -7,6 +7,7 @@
 
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/coffee.css">
 
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +16,103 @@
     <div data-include="components/header.html"></div>
 
     <main>
-        <h2>Book Inventory</h2>
+        <h2>Stockroom Inventory</h2>
+
+        <section class="brand-intro">
+            <p>What's on the shelf at <strong>The Fired Bean</strong> this week. The dragon counts stock personally — anything marked <em>Roasting</em> is currently sitting in the flame path and will be back on the shelf by Friday.</p>
+        </section>
+
+        <table class="inventory-table">
+            <caption>Current stock at the Daring Dragon roastery and café</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">In Stock</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sunrise Ethiopian beans (12 oz)</td>
+                    <td>Whole bean</td>
+                    <td>34</td>
+                    <td>$16.00</td>
+                    <td class="status-in">In Stock</td>
+                </tr>
+                <tr>
+                    <td>Colombian Crest beans (12 oz)</td>
+                    <td>Whole bean</td>
+                    <td>21</td>
+                    <td>$14.00</td>
+                    <td class="status-in">In Stock</td>
+                </tr>
+                <tr>
+                    <td>Smoky Sumatran beans (12 oz)</td>
+                    <td>Whole bean</td>
+                    <td>6</td>
+                    <td>$15.00</td>
+                    <td class="status-low">Low — reorder</td>
+                </tr>
+                <tr>
+                    <td>Dragon's Breath Reserve beans (8 oz)</td>
+                    <td>Whole bean</td>
+                    <td>0</td>
+                    <td>$22.00</td>
+                    <td class="status-roast">Roasting</td>
+                </tr>
+                <tr>
+                    <td>Barista oat milk</td>
+                    <td>Dairy alternate</td>
+                    <td>18</td>
+                    <td>$4.50</td>
+                    <td class="status-in">In Stock</td>
+                </tr>
+                <tr>
+                    <td>House vanilla syrup</td>
+                    <td>Syrup</td>
+                    <td>9</td>
+                    <td>$6.00</td>
+                    <td class="status-in">In Stock</td>
+                </tr>
+                <tr>
+                    <td>Cinnamon, ground (jar)</td>
+                    <td>Pantry</td>
+                    <td>4</td>
+                    <td>$3.25</td>
+                    <td class="status-low">Low — reorder</td>
+                </tr>
+                <tr>
+                    <td>Dragon-scale ceramic mug</td>
+                    <td>Merch</td>
+                    <td>27</td>
+                    <td>$18.00</td>
+                    <td class="status-in">In Stock</td>
+                </tr>
+                <tr>
+                    <td>Bean trading card binder</td>
+                    <td>Merch</td>
+                    <td>12</td>
+                    <td>$9.00</td>
+                    <td class="status-in">In Stock</td>
+                </tr>
+                <tr>
+                    <td>Café Bustelo brick (10 oz)</td>
+                    <td>Founder's home stash</td>
+                    <td>14</td>
+                    <td>$4.79</td>
+                    <td class="status-in">In Stock — always</td>
+                </tr>
+                <tr>
+                    <td>Espresso-puck dog treats</td>
+                    <td>For the pub dog</td>
+                    <td>2</td>
+                    <td>$5.00</td>
+                    <td class="status-roast">Roasting</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <div data-include="components/footer.html"></div>

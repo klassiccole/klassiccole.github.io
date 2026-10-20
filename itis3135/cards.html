@@ -7,6 +7,7 @@
 
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/coffee.css">
 
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +16,134 @@
     <div data-include="components/header.html"></div>
 
     <main>
-        <h2>Playing Cards</h2>
+        <h2>Bean Trading Cards</h2>
+
+        <section class="brand-intro">
+            <p>Every bag sold at <strong>The Fired Bean</strong> ships with one collectible bean card. Pull the full first-series set of six and the dragon owes you a free cappuccino. Rarity scales with how hard the bean was to roast without catching fire.</p>
+        </section>
+
+        <ul class="card-grid">
+            <li class="bean-card">
+                <span class="rarity">Common</span>
+                <figure>
+                    <svg viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Illustration of a light roast coffee bean">
+                        <ellipse cx="50" cy="50" rx="26" ry="38" fill="#c68b4e"/>
+                        <path d="M50 14 C44 34 44 66 50 86" stroke="#7a4e20" stroke-width="5" fill="none"/>
+                    </svg>
+                </figure>
+                <h3>Sunrise Ethiopian</h3>
+                <p class="origin">Yirgacheffe, Ethiopia</p>
+                <dl>
+                    <dt>Tasting notes</dt>
+                    <dd>Bergamot, peach, jasmine</dd>
+                    <dt>Body</dt>
+                    <dd class="meter" role="img" aria-label="Body 3 out of 5"><span style="width: 60%"></span></dd>
+                    <dt>Acidity</dt>
+                    <dd class="meter" role="img" aria-label="Acidity 5 out of 5"><span style="width: 100%"></span></dd>
+                </dl>
+            </li>
+
+            <li class="bean-card">
+                <span class="rarity">Common</span>
+                <figure>
+                    <svg viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Illustration of a medium roast coffee bean">
+                        <ellipse cx="50" cy="50" rx="26" ry="38" fill="#a05f2c"/>
+                        <path d="M50 14 C44 34 44 66 50 86" stroke="#5c3210" stroke-width="5" fill="none"/>
+                    </svg>
+                </figure>
+                <h3>Colombian Crest</h3>
+                <p class="origin">Huila, Colombia</p>
+                <dl>
+                    <dt>Tasting notes</dt>
+                    <dd>Caramel, red apple, walnut</dd>
+                    <dt>Body</dt>
+                    <dd class="meter" role="img" aria-label="Body 4 out of 5"><span style="width: 80%"></span></dd>
+                    <dt>Acidity</dt>
+                    <dd class="meter" role="img" aria-label="Acidity 3 out of 5"><span style="width: 60%"></span></dd>
+                </dl>
+            </li>
+
+            <li class="bean-card">
+                <span class="rarity">Uncommon</span>
+                <figure>
+                    <svg viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Illustration of a dark roast coffee bean">
+                        <ellipse cx="50" cy="50" rx="26" ry="38" fill="#6b3a17"/>
+                        <path d="M50 14 C44 34 44 66 50 86" stroke="#2e1505" stroke-width="5" fill="none"/>
+                    </svg>
+                </figure>
+                <h3>Smoky Sumatran</h3>
+                <p class="origin">Lintong, Sumatra</p>
+                <dl>
+                    <dt>Tasting notes</dt>
+                    <dd>Cedar, dark chocolate, black pepper</dd>
+                    <dt>Body</dt>
+                    <dd class="meter" role="img" aria-label="Body 5 out of 5"><span style="width: 100%"></span></dd>
+                    <dt>Acidity</dt>
+                    <dd class="meter" role="img" aria-label="Acidity 2 out of 5"><span style="width: 40%"></span></dd>
+                </dl>
+            </li>
+
+            <li class="bean-card">
+                <span class="rarity">Legendary (at home)</span>
+                <figure>
+                    <svg viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Illustration of a yellow-wrapped brick of espresso coffee">
+                        <rect x="22" y="30" width="56" height="44" rx="4" fill="#e8b800"/>
+                        <ellipse cx="50" cy="52" rx="12" ry="17" fill="#6b3a17"/>
+                        <path d="M50 37 C47 45 53 48 50 56 C48 61 52 64 50 69" stroke="#2e1505" stroke-width="3" fill="none"/>
+                    </svg>
+                </figure>
+                <h3>The Yellow Brick</h3>
+                <p class="origin">Founder's kitchen, every single morning</p>
+                <dl>
+                    <dt>Tasting notes</dt>
+                    <dd>Café Bustelo — strong, sweet, nostalgic, espresso-forever</dd>
+                    <dt>Body</dt>
+                    <dd class="meter" role="img" aria-label="Body 5 out of 5"><span style="width: 100%"></span></dd>
+                    <dt>Acidity</dt>
+                    <dd class="meter" role="img" aria-label="Acidity 2 out of 5"><span style="width: 40%"></span></dd>
+                </dl>
+            </li>
+
+            <li class="bean-card">
+                <span class="rarity">Rare</span>
+                <figure>
+                    <svg viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Illustration of a blue-toned rare coffee bean">
+                        <ellipse cx="50" cy="50" rx="26" ry="38" fill="#4a6741"/>
+                        <path d="M50 14 C44 34 44 66 50 86" stroke="#22331d" stroke-width="5" fill="none"/>
+                    </svg>
+                </figure>
+                <h3>Jade Jamaica</h3>
+                <p class="origin">Blue Mountain, Jamaica</p>
+                <dl>
+                    <dt>Tasting notes</dt>
+                    <dd>Cream, pine, minerals</dd>
+                    <dt>Body</dt>
+                    <dd class="meter" role="img" aria-label="Body 3 out of 5"><span style="width: 60%"></span></dd>
+                    <dt>Acidity</dt>
+                    <dd class="meter" role="img" aria-label="Acidity 3 out of 5"><span style="width: 60%"></span></dd>
+                </dl>
+            </li>
+
+            <li class="bean-card">
+                <span class="rarity">Legendary</span>
+                <figure>
+                    <svg viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Illustration of a black coffee bean wreathed in flame">
+                        <ellipse cx="50" cy="50" rx="26" ry="38" fill="#1d0f06"/>
+                        <path d="M50 12 C40 30 58 36 50 52 C44 64 56 72 50 88" stroke="#d95d39" stroke-width="5" fill="none"/>
+                    </svg>
+                </figure>
+                <h3>Dragon's Breath Reserve</h3>
+                <p class="origin">Roasted in-house, by the mascot</p>
+                <dl>
+                    <dt>Tasting notes</dt>
+                    <dd>Molasses, smoke, victory</dd>
+                    <dt>Body</dt>
+                    <dd class="meter" role="img" aria-label="Body 5 out of 5"><span style="width: 100%"></span></dd>
+                    <dt>Acidity</dt>
+                    <dd class="meter" role="img" aria-label="Acidity 4 out of 5"><span style="width: 80%"></span></dd>
+                </dl>
+            </li>
+        </ul>
     </main>
 
     <div data-include="components/footer.html"></div>
