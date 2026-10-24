@@ -21,7 +21,7 @@
         <!-- class="brand-intro": themed intro banner (on the paragraph itself, no wrapper needed) shared by all five coffee pages; styling hook for styles/coffee.css -->
             <p class="brand-intro">Every bag sold at <strong>The Fired Bean</strong> ships with one collectible bean card. Pull the full first-series set of six and the dragon owes you a free cappuccino. Rarity scales with how hard the bean was to roast without catching fire.</p>
 
-        <!-- class="card-grid" lays the cards out in a responsive grid; class="bean-card" styles each card; class="rarity" and class="origin" are the badge and subheading hooks; the fill-* span classes set each meter's width in coffee.css -->
+        <!-- class="card-grid" lays the cards out in a responsive grid; class="bean-card" styles each card; class="rarity" and class="origin" are the badge and subheading hooks; the fill-* span classes set each meter's width in coffee.css; class="card-title" styles the card headings (validator forbids qualified heading selectors) -->
         <ul class="card-grid">
             <li class="bean-card">
                 <span class="rarity">Common</span>
@@ -31,7 +31,7 @@
                         <path d="M50 14 C44 34 44 66 50 86" stroke="#7a4e20" stroke-width="5" fill="none"/>
                     </svg>
                 </figure>
-                <h3>Sunrise Ethiopian</h3>
+                <h3 class="card-title">Sunrise Ethiopian</h3>
                 <p class="origin">Yirgacheffe, Ethiopia</p>
                 <dl>
                     <dt>Tasting notes</dt>
@@ -51,7 +51,7 @@
                         <path d="M50 14 C44 34 44 66 50 86" stroke="#5c3210" stroke-width="5" fill="none"/>
                     </svg>
                 </figure>
-                <h3>Colombian Crest</h3>
+                <h3 class="card-title">Colombian Crest</h3>
                 <p class="origin">Huila, Colombia</p>
                 <dl>
                     <dt>Tasting notes</dt>
@@ -71,7 +71,7 @@
                         <path d="M50 14 C44 34 44 66 50 86" stroke="#2e1505" stroke-width="5" fill="none"/>
                     </svg>
                 </figure>
-                <h3>Smoky Sumatran</h3>
+                <h3 class="card-title">Smoky Sumatran</h3>
                 <p class="origin">Lintong, Sumatra</p>
                 <dl>
                     <dt>Tasting notes</dt>
@@ -92,7 +92,7 @@
                         <path d="M50 37 C47 45 53 48 50 56 C48 61 52 64 50 69" stroke="#2e1505" stroke-width="3" fill="none"/>
                     </svg>
                 </figure>
-                <h3>The Yellow Brick</h3>
+                <h3 class="card-title">The Yellow Brick</h3>
                 <p class="origin">Founder's kitchen, every single morning</p>
                 <dl>
                     <dt>Tasting notes</dt>
@@ -112,7 +112,7 @@
                         <path d="M50 14 C44 34 44 66 50 86" stroke="#22331d" stroke-width="5" fill="none"/>
                     </svg>
                 </figure>
-                <h3>Jade Jamaica</h3>
+                <h3 class="card-title">Jade Jamaica</h3>
                 <p class="origin">Blue Mountain, Jamaica</p>
                 <dl>
                     <dt>Tasting notes</dt>
@@ -132,7 +132,7 @@
                         <path d="M50 12 C40 30 58 36 50 52 C44 64 56 72 50 88" stroke="#d95d39" stroke-width="5" fill="none"/>
                     </svg>
                 </figure>
-                <h3>Dragon's Breath Reserve</h3>
+                <h3 class="card-title">Dragon's Breath Reserve</h3>
                 <p class="origin">Roasted in-house, by the mascot</p>
                 <dl>
                     <dt>Tasting notes</dt>

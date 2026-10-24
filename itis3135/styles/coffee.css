@@ -1,9 +1,29 @@
-/* The Fired Bean theme
-   Shared by survey, cards, inventory, documentation, product pages.
-   Palette: espresso #3b2314 | roast #8c3d10 | cream #f7f0e4 | caramel #c68b4e
-*/
+/* ============================================================
+   The Fired Bean theme
+   Shared by survey, cards, inventory, documentation, product.
 
-/* Brand intro block under each page h2 */
+   Palette:
+     espresso #3b2314  (dark backgrounds, strong text on cream)
+     roast    #8c3d10  (accents, meter fills, link-safe on cream)
+     cream    #f7f0e4  (card and panel surfaces)
+     caramel  #c68b4e  (borders, call-to-action buttons)
+     gold     #e8c9a0  (highlights on dark backgrounds)
+
+   Linter notes:
+   - Layouts use flexbox, not CSS grid: the course validator's
+     CSS parser predates grid and cannot parse minmax(), which
+     cascades into false parse errors elsewhere in the file.
+   - Headings are styled through classes (card-title, etc.),
+     never through qualified selectors like ".card h3", which
+     the validator forbids.
+   - Inputs pair width with box-sizing: border-box so padding
+     and border sit inside the declared width.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Brand intro banner: the single paragraph under each page h2.
+   The class lives on the <p> itself; no wrapper element needed.
+   ------------------------------------------------------------ */
 
 .brand-intro {
     background-color: #3b2314;
@@ -13,15 +33,15 @@
     margin-bottom: 24px;
 }
 
-.brand-intro p {
-    margin: 0;
-}
-
 .brand-intro strong {
     color: #e8c9a0;
 }
 
-/* Survey form */
+/* ------------------------------------------------------------
+   Survey form
+   ------------------------------------------------------------ */
+
+/* Panels group related questions; legends name each panel. */
 
 .coffee-form fieldset {
     border: 2px solid #c68b4e;
@@ -42,10 +62,14 @@
     font-weight: bold;
 }
 
+/* Text-style inputs stretch to a shared readable width.
+   box-sizing keeps padding and border inside width: 100%. */
+
 .coffee-form input[type="text"],
 .coffee-form input[type="email"],
 .coffee-form select,
 .coffee-form textarea {
+    box-sizing: border-box;
     display: block;
     width: 100%;
     max-width: 420px;
@@ -59,16 +83,19 @@
     font-size: 1rem;
 }
 
+/* Radio/checkbox rows: un-bold the label and sit the control
+   beside its text; the input's right margin replaces flex gap. */
+
 .coffee-form .choice {
     font-weight: normal;
     display: flex;
     align-items: center;
-    gap: 8px;
     margin-top: 6px;
 }
 
 .coffee-form .choice input {
     width: auto;
+    margin-right: 8px;
 }
 
 .coffee-form button {
@@ -87,25 +114,36 @@
     background-color: #8c3d10;
 }
 
-/* Bean trading cards */
+/* ------------------------------------------------------------
+   Bean trading cards
+   Flexbox + wrap: cards grow to fill the row and drop to a new
+   row below their 240px comfort width, like a card fan.
+   ------------------------------------------------------------ */
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     padding: 0;
     list-style: none;
 }
 
+/* flex-grow makes cards in a row equal width; the side margins
+   stand in for a grid gap. */
+
 .bean-card {
+    flex: 1 1 240px;
     background-color: #f7f0e4;
     border: 2px solid #8c3d10;
     border-radius: 10px;
     padding: 16px;
+    margin: 0 10px 20px;
     text-align: center;
 }
 
-.bean-card h3 {
+/* Class-styled headings: one rule per heading role, no
+   qualified selectors. */
+
+.card-title {
     margin: 8px 0 2px;
 }
 
@@ -119,6 +157,8 @@
     margin: 0 0 10px;
 }
 
+/* Rarity badge: dark pill with gold text. */
+
 .bean-card .rarity {
     display: inline-block;
     background-color: #3b2314;
@@ -128,6 +168,9 @@
     padding: 2px 10px;
     margin-bottom: 10px;
 }
+
+/* Stat list (tasting notes, body, acidity) aligns left while
+   the card itself is centered. */
 
 .bean-card dl {
     text-align: left;
@@ -143,6 +186,9 @@
     margin: 0 0 8px;
 }
 
+/* Meter bar: track is the dd, fill is the inner span, whose
+   width is set by the fill-* classes at the bottom of the file. */
+
 .meter {
     background-color: #e4d5bd;
     border-radius: 4px;
@@ -156,25 +202,26 @@
     background-color: #8c3d10;
 }
 
-/* Meter fill widths: class-based replacements for inline width styles */
+/* Meter fill widths: class-based replacements for inline
+   width styles, keeping the HTML free of inline styles. */
 
 .fill-20 { width: 20%; }
-
 .fill-40 { width: 40%; }
-
 .fill-60 { width: 60%; }
-
 .fill-80 { width: 80%; }
-
 .fill-100 { width: 100%; }
 
-/* Inventory table */
+/* ------------------------------------------------------------
+   Inventory table
+   ------------------------------------------------------------ */
 
 .inventory-table {
     width: 100%;
     border-collapse: collapse;
     background-color: #f7f0e4;
 }
+
+/* Caption sits under the table like a stockroom sign-off. */
 
 .inventory-table caption {
     caption-side: bottom;
@@ -190,14 +237,21 @@
     text-align: left;
 }
 
+/* Dark header row reads as a chalkboard menu. */
+
 .inventory-table thead th {
     background-color: #3b2314;
     color: #f7f0e4;
 }
 
+/* Zebra striping for row tracking across wide tables. */
+
 .inventory-table tbody tr:nth-child(even) {
     background-color: #efe3cf;
 }
+
+/* Stock status colors: green = healthy, red = reorder,
+   roast orange = being roasted by the dragon. */
 
 .status-in {
     color: #2e5d1e;
@@ -214,13 +268,18 @@
     font-weight: bold;
 }
 
-/* Brew documentation layout */
+/* ------------------------------------------------------------
+   Brew documentation
+   Two-column layout: sticky nav rail + scrolling content.
+   ------------------------------------------------------------ */
 
 .doc-layout {
     display: flex;
-    gap: 24px;
     align-items: flex-start;
 }
+
+/* The rail's right margin replaces a flex gap; sticky keeps it
+   in view while the brew sections scroll past. */
 
 .doc-nav {
     flex: 0 0 200px;
@@ -228,11 +287,12 @@
     border: 2px solid #c68b4e;
     border-radius: 8px;
     padding: 12px;
+    margin-right: 24px;
     position: sticky;
     top: 12px;
 }
 
-.doc-nav h3 {
+.nav-title {
     margin-top: 0;
 }
 
@@ -248,11 +308,15 @@
 
 .doc-section {
     flex: 1;
+    min-width: 0;
 }
 
 .doc-section article {
     margin-bottom: 28px;
 }
+
+/* Parameter blocks read like recipe cards: dark chalkboard
+   with cream text, scrollable if a narrow screen clips them. */
 
 .doc-section pre {
     background-color: #3b2314;
@@ -262,7 +326,11 @@
     overflow-x: auto;
 }
 
-/* Product landing page */
+/* ------------------------------------------------------------
+   Product landing page
+   ------------------------------------------------------------ */
+
+/* Hero: dark banner with the product name in gold. */
 
 .hero {
     background-color: #3b2314;
@@ -272,16 +340,18 @@
     text-align: center;
 }
 
-.hero h2 {
+.hero-title {
     color: #e8c9a0;
     font-size: 2rem;
-    margin-bottom: 6px;
+    margin: 0 0 6px;
 }
 
 .hero p {
     margin: 0 auto 16px;
     max-width: 560px;
 }
+
+/* Call-to-action buttons: caramel, brightening on hover. */
 
 .hero .cta,
 .cta-button {
@@ -299,35 +369,41 @@
     background-color: #e8c9a0;
 }
 
+/* Feature row: three selling points that stack on phones. */
+
 .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 28px 0;
 }
 
 .feature-grid article {
+    flex: 1 1 220px;
     background-color: #f7f0e4;
     border-left: 6px solid #8c3d10;
     border-radius: 6px;
     padding: 14px 16px;
+    margin: 0 10px 20px;
 }
 
-.feature-grid h3 {
+.feature-title {
     margin-top: 0;
 }
 
+/* Pricing tiers: same flex pattern, centered content. */
+
 .price-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 20px 0 28px;
 }
 
 .price-tier {
+    flex: 1 1 200px;
     border: 2px solid #c68b4e;
     border-radius: 10px;
     padding: 18px;
+    margin: 0 10px 20px;
     text-align: center;
     background-color: #f7f0e4;
 }
@@ -346,6 +422,8 @@
     padding-left: 20px;
 }
 
+/* Closing banner above the footer. */
+
 .final-cta {
     text-align: center;
     background-color: #efe3cf;
@@ -353,7 +431,11 @@
     padding: 24px;
 }
 
-/* Small screens */
+/* ------------------------------------------------------------
+   Small screens
+   Stack the documentation rail above its content and let each
+   rail/panel span the full width.
+   ------------------------------------------------------------ */
 
 @media (max-width: 640px) {
     .doc-layout {
@@ -365,5 +447,7 @@
         flex: none;
         width: 100%;
         box-sizing: border-box;
+        margin-right: 0;
+        margin-bottom: 24px;
     }
 }
