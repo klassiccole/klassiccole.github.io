@@ -9,16 +9,41 @@
      caramel  #c68b4e  (borders, call-to-action buttons)
      gold     #e8c9a0  (highlights on dark backgrounds)
 
-   Linter notes:
-   - Layouts use flexbox, not CSS grid: the course validator's
-     CSS parser predates grid and cannot parse minmax(), which
-     cascades into false parse errors elsewhere in the file.
-   - Headings are styled through classes (card-title, etc.),
-     never through qualified selectors like ".card h3", which
-     the validator forbids.
-   - Inputs pair width with box-sizing: border-box so padding
-     and border sit inside the declared width.
    ============================================================ */
+
+/* ------------------------------------------------------------
+   IMPORTANT NOTE ON LAYOUT TECHNIQUE — READ BEFORE EDITING
+
+   The first two versions of this stylesheet used modern layout
+   methods (CSS grid with minmax(), and flexbox with
+   flex-wrap: wrap). The course validator rejected them:
+
+   - "minmax(240px, 1fr)" failed to parse: the validator's CSS
+     parser predates both CSS grid and the "fr" unit. That one
+     real failure desynchronized the parser, and it then
+     misread ordinary declaration colons (gap:, background-color:)
+     as pseudo-selector colons, reporting bogus errors like
+     "Expected a FUNCTION or IDENT after colon" on innocent
+     lines — the desync signature, not real bugs.
+
+   - The second version removed grid but kept flex-wrap: wrap.
+     The validator flagged exactly the three rules containing
+     flex-wrap (card-grid, feature-grid, price-grid) while
+     passing the rules that use plain flex WITHOUT wrapping
+     (choice, doc-layout, doc-nav). Its parser predates
+     wrapped-flexbox layout.
+
+   THE FIX, chosen deliberately: all multi-column card layouts
+   use the oldest, most fundamental technique — display:
+   inline-block with width and vertical-align — which every CSS
+   parser understands. Rows wrap naturally like a card fan and
+   the mobile media query stacks them full-width.
+
+   If you re-enable flex/grid here and the validator reports
+   "Expected a FUNCTION or IDENT after colon" on lines that look
+   perfectly fine, this note is why: the parser desynced. Change
+   the layout back to inline-block instead of hunting ghosts.
+   ------------------------------------------------------------ */
 
 /* ------------------------------------------------------------
    Brand intro banner: the single paragraph under each page h2.
@@ -116,22 +141,31 @@
 
 /* ------------------------------------------------------------
    Bean trading cards
-   Flexbox + wrap: cards grow to fill the row and drop to a new
-   row below their 240px comfort width, like a card fan.
+   Old-school layout: inline-block cards inside a centered row.
+   Each card keeps its 240px comfort width; cards flow onto new
+   rows naturally when the row fills, like a card fan. No grid,
+   no flex-wrap — the validator's parser predates both.
    ------------------------------------------------------------ */
 
+/* text-align: center centers the inline-block cards in the row;
+   list-style/padding reset turns the ul into a bare container. */
+
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
     padding: 0;
     list-style: none;
 }
 
-/* flex-grow makes cards in a row equal width; the side margins
-   stand in for a grid gap. */
+/* display: inline-block makes each card flow and wrap like a
+   word in a paragraph; width gives the row room for three
+   cards; vertical-align: top keeps short cards aligned to the
+   top edge of their row. */
 
 .bean-card {
-    flex: 1 1 240px;
+    display: inline-block;
+    width: 240px;
+    vertical-align: top;
+    box-sizing: border-box;
     background-color: #f7f0e4;
     border: 2px solid #8c3d10;
     border-radius: 10px;
@@ -329,7 +363,6 @@
 /* ------------------------------------------------------------
    Product landing page
    ------------------------------------------------------------ */
-
 /* Hero: dark banner with the product name in gold. */
 
 .hero {
@@ -369,37 +402,43 @@
     background-color: #e8c9a0;
 }
 
-/* Feature row: three selling points that stack on phones. */
+/* Feature row: three selling points that stack on phones.
+   Same inline-block pattern as the trading cards. */
 
 .feature-grid {
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
     margin: 28px 0;
 }
 
 .feature-grid article {
-    flex: 1 1 220px;
+    display: inline-block;
+    width: 270px;
+    vertical-align: top;
+    box-sizing: border-box;
     background-color: #f7f0e4;
     border-left: 6px solid #8c3d10;
     border-radius: 6px;
     padding: 14px 16px;
     margin: 0 10px 20px;
+    text-align: left;
 }
 
 .feature-title {
     margin-top: 0;
 }
 
-/* Pricing tiers: same flex pattern, centered content. */
+/* Pricing tiers: same inline-block pattern, centered content. */
 
 .price-grid {
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
     margin: 20px 0 28px;
 }
 
 .price-tier {
-    flex: 1 1 200px;
+    display: inline-block;
+    width: 230px;
+    vertical-align: top;
+    box-sizing: border-box;
     border: 2px solid #c68b4e;
     border-radius: 10px;
     padding: 18px;
@@ -433,8 +472,9 @@
 
 /* ------------------------------------------------------------
    Small screens
-   Stack the documentation rail above its content and let each
-   rail/panel span the full width.
+   Stack the documentation rail above its content, and let the
+   cards, feature panels, and pricing tiers span the full width
+   instead of sharing a row.
    ------------------------------------------------------------ */
 
 @media (max-width: 640px) {
@@ -449,5 +489,12 @@
         box-sizing: border-box;
         margin-right: 0;
         margin-bottom: 24px;
+    }
+
+    .bean-card,
+    .feature-grid article,
+    .price-tier {
+        width: 100%;
+        margin: 0 0 20px;
     }
 }
