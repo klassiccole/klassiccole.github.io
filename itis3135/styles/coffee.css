@@ -355,6 +355,13 @@
     max-width: 560px;
 }
 
+/* Hero product shot: block-centered above the tagline. */
+
+.hero img {
+    display: block;
+    margin: 0 auto 16px;
+}
+
 /* Call-to-action buttons: caramel, brightening on hover. */
 
 .hero .cta,

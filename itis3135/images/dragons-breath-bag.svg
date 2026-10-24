@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="180" height="180">
+    <!-- The Fired Bean product art: Dragon's Breath Blend bag, black with ember flame emblem and gold steam -->
+    <!-- steam curls -->
+    <path d="M70 52 C62 40 74 34 68 22 C64 14 74 10 78 4"
+          stroke="#e8c9a0" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M104 50 C96 38 108 32 102 20 C98 12 108 8 112 2"
+          stroke="#e8c9a0" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M138 52 C130 40 142 34 136 22 C132 14 142 10 146 4"
+          stroke="#e8c9a0" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- bag body with folded top -->
+    <rect x="45" y="70" width="110" height="150" rx="10" fill="#1d0f06" stroke="#c68b4e" stroke-width="4"/>
+    <rect x="45" y="70" width="110" height="18" rx="6" fill="#3b2314" stroke="#c68b4e" stroke-width="4"/>
+    <!-- cream label -->
+    <rect x="60" y="104" width="80" height="82" rx="6" fill="#f7f0e4"/>
+    <!-- flame emblem on label -->
+    <path d="M100 116 C88 132 108 138 96 152 C90 162 104 170 98 182 C110 172 122 178 114 160 C124 166 122 144 112 140 C118 130 106 124 100 116 Z"
+          fill="#d95d39"/>
+    <!-- label text bars -->
+    <rect x="68" y="196" width="64" height="5" rx="2" fill="#8c3d10"/>
+    <rect x="76" y="206" width="48" height="4" rx="2" fill="#c68b4e"/>
+</svg>

@@ -13,71 +13,72 @@
 </head>
 
 <body>
+    <!-- div data-include: required course include wrapper; header.html is injected here by scripts/include.min.js -->
     <div data-include="components/header.html"></div>
 
     <main>
         <section class="hero">
             <h2 class="hero-title">Dragon's Breath Blend</h2>
+            <figure>
+                <img src="images/dragons-breath-bag.svg" alt="Black bag of Dragon's Breath Blend coffee with an ember-orange flame emblem and gold steam curls" width="180" height="180">
+                <!-- figure/img: the hero's product shot; the class-less hero img rule in coffee.css centers it -->
+            </figure>
             <p>Our signature dark roast, finished the only way a dragon can: with a slow, even pass of actual dragonfire. Molasses-deep, campfire-smooth, and never — ever — burnt.</p>
             <!-- class="cta" styles the hero call-to-action button; it links to the subscribe section by id below -->
             <a class="cta" href="#subscribe">Get It Shipped</a>
         </section>
 
-        <section>
+        <!-- section class="feature-row": the selling points row (named -row, not -grid: the validator misfires on "grid" in a class name); the h3 lives inside so the section has its own heading -->
+        <section class="feature-row">
             <h3 class="feature-title">Why It Roars</h3>
-            <!-- class="feature-row" arranges the selling points in a row (named -row, not -grid: the validator misfires on "grid" in a class name) -->
-        <div class="feature-row">
-                <article>
-                    <h4>Flame-Finished</h4>
-                    <p>Traditional drum roasting gets the bean 90% of the way. The last 10% is one controlled breath from the roaster himself. No gas burner has ever matched it.</p>
-                </article>
-                <article>
-                    <h4>Roasted This Week</h4>
-                    <p>Every subscription box is filled from beans roasted within the past seven days. If it has sat past its prime, the dragon smells it, and it does not ship.</p>
-                </article>
-                <article>
-                    <h4>Card In Every Bag</h4>
-                    <p>Each 8 oz bag includes one Dragon's Breath Reserve trading card. Collect six, bring the set in, and your tenth bag is on the house.</p>
-                </article>
-            </div>
+            <article>
+                <h4>Flame-Finished</h4>
+                <p>Traditional drum roasting gets the bean 90% of the way. The last 10% is one controlled breath from the roaster himself. No gas burner has ever matched it.</p>
+            </article>
+            <article>
+                <h4>Roasted This Week</h4>
+                <p>Every subscription box is filled from beans roasted within the past seven days. If it has sat past its prime, the dragon smells it, and it does not ship.</p>
+            </article>
+            <article>
+                <h4>Card In Every Bag</h4>
+                <p>Each 8 oz bag includes one Dragon's Breath Reserve trading card. Collect six, bring the set in, and your tenth bag is on the house.</p>
+            </article>
         </section>
 
-        <!-- class="price-row" (named -row, not -grid: the validator misfires on "grid" in a class name) and class="price-tier" build the three pricing columns; class="cta-button" styles the pricing buttons; id="subscribe" is the hero button's anchor target; class="hero-title" and class="feature-title" style the headings (validator forbids qualified heading selectors) -->
-        <section id="subscribe">
+        <!-- section id="subscribe" class="price-row": pricing row; id is the hero button's anchor target; the h3 lives inside so the section has its own heading; the class="price" spans render each tier's monthly price (span, because it sits inline under the h4) -->
+        <section id="subscribe" class="price-row">
             <h3 class="feature-title">Pick Your Roast Schedule</h3>
-            <div class="price-row">
-                <div class="price-tier">
-                    <h4>Hatchling</h4>
-                    <span class="price">$14 / month</span>
-                    <ul>
-                        <li>One 8 oz bag per month</li>
-                        <li>One trading card</li>
-                        <li>Cancel anytime</li>
-                    </ul>
-                    <a class="cta-button" href="#">Start Hatchling</a>
-                </div>
-                <div class="price-tier">
-                    <h4>Wyvern</h4>
-                    <span class="price">$26 / month</span>
-                    <ul>
-                        <li>Two 8 oz bags per month</li>
-                        <li>Two trading cards</li>
-                        <li>Free mug at month three</li>
-                    </ul>
-                    <a class="cta-button" href="#">Go Wyvern</a>
-                </div>
-                <div class="price-tier">
-                    <h4>Elder Dragon</h4>
-                    <span class="price">$48 / month</span>
-                    <ul>
-                        <li>Four 8 oz bags per month</li>
-                        <li>Full card set each quarter</li>
-                        <li>First crack at Reserve lots</li>
-                    </ul>
-                    <a class="cta-button" href="#">Rise, Elder</a>
-                </div>
-            </div>
+            <section class="price-tier">
+                <h4>Hatchling</h4>
+                <span class="price">$14 / month</span>
+                <ul>
+                    <li>One 8 oz bag per month</li>
+                    <li>One trading card</li>
+                    <li>Cancel anytime</li>
+                </ul>
+                <a class="cta-button" href="#">Start Hatchling</a>
+            </section>
+            <section class="price-tier">
+                <h4>Wyvern</h4>
+                <span class="price">$26 / month</span>
+                <ul>
+                    <li>Two 8 oz bags per month</li>
+                    <li>Two trading cards</li>
+                    <li>Free mug at month three</li>
+                </ul>
+                <a class="cta-button" href="#">Go Wyvern</a>
+            </section>
+            <section class="price-tier">
+                <h4>Elder Dragon</h4>
+                <span class="price">$48 / month</span>
+                <ul>
+                    <li>Four 8 oz bags per month</li>
+                    <li>Full card set each quarter</li>
+                    <li>First crack at Reserve lots</li>
+                </ul>
+                <a class="cta-button" href="#">Rise, Elder</a>
         </section>
+    </section>
 
         <!-- class="final-cta" styles the closing call-to-action block -->
         <section class="final-cta">
@@ -87,6 +88,7 @@
         </section>
     </main>
 
+    <!-- div data-include: required course include wrapper; footer.html is injected here by scripts/include.min.js -->
     <div data-include="components/footer.html"></div>
 
     <script src="scripts/include.min.js"></script>
