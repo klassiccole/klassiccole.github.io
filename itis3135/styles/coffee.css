@@ -2,62 +2,44 @@
    The Fired Bean theme
    Shared by survey, cards, inventory, documentation, product.
 
-   Palette:
-     espresso #3b2314  (dark backgrounds, strong text on cream)
-     roast    #8c3d10  (accents, meter fills, link-safe on cream)
-     cream    #f7f0e4  (card and panel surfaces)
-     caramel  #c68b4e  (borders, call-to-action buttons)
-     gold     #e8c9a0  (highlights on dark backgrounds)
-
+   Palette
+     espresso #3b2314  dark backgrounds
+     roast    #8c3d10  accents, meter fills
+     cream    #f7f0e4  card and panel surfaces
+     caramel  #c68b4e  borders, call-to-action buttons
+     gold     #e8c9a0  highlights on dark backgrounds
    ============================================================ */
 
-/* ------------------------------------------------------------
-   IMPORTANT NOTE ON LAYOUT TECHNIQUE — READ BEFORE EDITING
+/* ============================================================
+   VALIDATOR FINDINGS — read before changing layout
+   ============================================================ */
 
-   The first two versions of this stylesheet used modern layout
-   methods (CSS grid with minmax(), and flexbox with
-   flex-wrap: wrap). The course validator rejected them:
+/*
+   1. No CSS grid. The validator's parser predates grid and the
+      "fr" unit; minmax() fails and desyncs the parser, which
+      then misreports innocent lines as
+      "Expected a FUNCTION or IDENT after colon".
 
-   - "minmax(240px, 1fr)" failed to parse: the validator's CSS
-     parser predates both CSS grid and the "fr" unit. That one
-     real failure desynchronized the parser, and it then
-     misread ordinary declaration colons (gap:, background-color:)
-     as pseudo-selector colons, reporting bogus errors like
-     "Expected a FUNCTION or IDENT after colon" on innocent
-     lines — the desync signature, not real bugs.
+   2. No flex-wrap. The validator flags any rule containing
+      flex-wrap: wrap; plain flex without wrapping is fine.
 
-   - The second version removed grid but kept flex-wrap: wrap.
-     The validator flagged exactly the three rules containing
-     flex-wrap (card-grid, feature-grid, price-grid) while
-     passing the rules that use plain flex WITHOUT wrapping
-     (choice, doc-layout, doc-nav). Its parser predates
-     wrapped-flexbox layout.
+   3. No "grid" in class names. Rules whose selector contained
+      the substring "grid" (the old card-grid / feature-grid /
+      price-grid) were flagged through all three layout
+      rewrites, no matter what CSS they held. Classes are
+      named -row instead.
 
-   THE FIX, chosen deliberately: all multi-column card layouts
-   use the oldest, most fundamental technique — display:
-   inline-block with width and vertical-align — which every CSS
-   parser understands. Rows wrap naturally like a card fan and
-   the mobile media query stacks them full-width.
+   Multi-column layouts therefore use display: inline-block
+   with width and vertical-align — older than every parser,
+   and it wraps and stacks just the same.
 
-   If you re-enable flex/grid here and the validator reports
-   "Expected a FUNCTION or IDENT after colon" on lines that look
-   perfectly fine, this note is why: the parser desynced. Change
-   the layout back to inline-block instead of hunting ghosts.
+   If the validator reports parse errors on lines that look
+   perfectly fine, this note is why: it is a desync signature,
+   not a real bug. Check the layout syntax and selector names
+   first instead of hunting ghosts in the flagged line.
+   ============================================================ */
 
-   FINDING #3: even plain inline-block rules still errored as
-   long as their selector contained the substring "grid"
-   (card-grid, feature-grid, feature-grid article, price-grid
-   were flagged through all three layout rewrites, at whatever
-   their first declaration was). The validator's checker
-   misfires on the word "grid" in a class name, so the classes
-   are named -row instead. If new false errors appear, check the
-   selector names first.
-   ------------------------------------------------------------ */
-
-/* ------------------------------------------------------------
-   Brand intro banner: the single paragraph under each page h2.
-   The class lives on the <p> itself; no wrapper element needed.
-   ------------------------------------------------------------ */
+/* ===== Brand intro banner: the paragraph under each page h2 ===== */
 
 .brand-intro {
     background-color: #3b2314;
@@ -71,11 +53,9 @@
     color: #e8c9a0;
 }
 
-/* ------------------------------------------------------------
-   Survey form
-   ------------------------------------------------------------ */
+/* ===== Survey form ===== */
 
-/* Panels group related questions; legends name each panel. */
+/* Question panels; legends name each panel. */
 
 .coffee-form fieldset {
     border: 2px solid #c68b4e;
@@ -96,8 +76,8 @@
     font-weight: bold;
 }
 
-/* Text-style inputs stretch to a shared readable width.
-   box-sizing keeps padding and border inside width: 100%. */
+/* Text inputs stretch to a shared readable width.
+   box-sizing keeps padding and border inside the width. */
 
 .coffee-form input[type="text"],
 .coffee-form input[type="email"],
@@ -117,8 +97,7 @@
     font-size: 1rem;
 }
 
-/* Radio/checkbox rows: un-bold the label and sit the control
-   beside its text; the input's right margin replaces flex gap. */
+/* Radio/checkbox rows: un-bolded labels, control beside text. */
 
 .coffee-form .choice {
     font-weight: normal;
@@ -148,27 +127,16 @@
     background-color: #8c3d10;
 }
 
-/* ------------------------------------------------------------
-   Bean trading cards
-   Old-school layout: inline-block cards inside a centered row.
-   Each card keeps its 240px comfort width; cards flow onto new
-   rows naturally when the row fills, like a card fan. No grid,
-   no flex-wrap — the validator's parser predates both.
-   ------------------------------------------------------------ */
+/* ===== Bean trading cards ===== */
 
-/* text-align: center centers the inline-block cards in the row;
-   list-style/padding reset turns the ul into a bare container. */
+/* inline-block cards inside a centered row: rows fill left to
+   right and wrap naturally, like a card fan. */
 
 .card-row {
     text-align: center;
     padding: 0;
     list-style: none;
 }
-
-/* display: inline-block makes each card flow and wrap like a
-   word in a paragraph; width gives the row room for three
-   cards; vertical-align: top keeps short cards aligned to the
-   top edge of their row. */
 
 .bean-card {
     display: inline-block;
@@ -183,8 +151,8 @@
     text-align: center;
 }
 
-/* Class-styled headings: one rule per heading role, no
-   qualified selectors. */
+/* Card headings: class-styled, never qualified (e.g. .card h3),
+   which the validator forbids. */
 
 .card-title {
     margin: 8px 0 2px;
@@ -200,7 +168,7 @@
     margin: 0 0 10px;
 }
 
-/* Rarity badge: dark pill with gold text. */
+/* Rarity badge. */
 
 .bean-card .rarity {
     display: inline-block;
@@ -212,8 +180,7 @@
     margin-bottom: 10px;
 }
 
-/* Stat list (tasting notes, body, acidity) aligns left while
-   the card itself is centered. */
+/* Stat list aligns left inside the centered card. */
 
 .bean-card dl {
     text-align: left;
@@ -229,8 +196,8 @@
     margin: 0 0 8px;
 }
 
-/* Meter bar: track is the dd, fill is the inner span, whose
-   width is set by the fill-* classes at the bottom of the file. */
+/* Meter bar: the dd is the track, the span is the fill; the
+   span's width comes from the fill-* classes below. */
 
 .meter {
     background-color: #e4d5bd;
@@ -245,8 +212,7 @@
     background-color: #8c3d10;
 }
 
-/* Meter fill widths: class-based replacements for inline
-   width styles, keeping the HTML free of inline styles. */
+/* Meter fill widths: classes instead of inline styles. */
 
 .fill-20 { width: 20%; }
 .fill-40 { width: 40%; }
@@ -254,9 +220,7 @@
 .fill-80 { width: 80%; }
 .fill-100 { width: 100%; }
 
-/* ------------------------------------------------------------
-   Inventory table
-   ------------------------------------------------------------ */
+/* ===== Inventory table ===== */
 
 .inventory-table {
     width: 100%;
@@ -287,13 +251,13 @@
     color: #f7f0e4;
 }
 
-/* Zebra striping for row tracking across wide tables. */
+/* Zebra striping for tracking rows. */
 
 .inventory-table tbody tr:nth-child(even) {
     background-color: #efe3cf;
 }
 
-/* Stock status colors: green = healthy, red = reorder,
+/* Stock status: green = healthy, red = reorder,
    roast orange = being roasted by the dragon. */
 
 .status-in {
@@ -311,10 +275,10 @@
     font-weight: bold;
 }
 
-/* ------------------------------------------------------------
-   Brew documentation
-   Two-column layout: sticky nav rail + scrolling content.
-   ------------------------------------------------------------ */
+/* ===== Brew documentation ===== */
+
+/* Two-column layout: sticky nav rail + scrolling content.
+   (Plain flex with no wrapping — validator-safe.) */
 
 .doc-layout {
     display: flex;
@@ -322,7 +286,7 @@
 }
 
 /* The rail's right margin replaces a flex gap; sticky keeps it
-   in view while the brew sections scroll past. */
+   in view while the sections scroll past. */
 
 .doc-nav {
     flex: 0 0 200px;
@@ -358,8 +322,7 @@
     margin-bottom: 28px;
 }
 
-/* Parameter blocks read like recipe cards: dark chalkboard
-   with cream text, scrollable if a narrow screen clips them. */
+/* Parameter blocks: dark chalkboard with cream text. */
 
 .doc-section pre {
     background-color: #3b2314;
@@ -369,10 +332,9 @@
     overflow-x: auto;
 }
 
-/* ------------------------------------------------------------
-   Product landing page
-   ------------------------------------------------------------ */
-/* Hero: dark banner with the product name in gold. */
+/* ===== Product landing page ===== */
+
+/* Hero banner with the product name in gold. */
 
 .hero {
     background-color: #3b2314;
@@ -411,8 +373,7 @@
     background-color: #e8c9a0;
 }
 
-/* Feature row: three selling points that stack on phones.
-   Same inline-block pattern as the trading cards. */
+/* Feature row: three selling points, same inline-block cards. */
 
 .feature-row {
     text-align: center;
@@ -436,10 +397,7 @@
     margin-top: 0;
 }
 
-/* Pricing tiers: same inline-block pattern, centered content.
-   All three container classes are named -row rather than -grid:
-   the validator misfires on the word "grid" in a class name,
-   whatever CSS the rule contains. */
+/* Pricing tiers: same inline-block pattern. */
 
 .price-row {
     text-align: center;
@@ -482,12 +440,11 @@
     padding: 24px;
 }
 
-/* ------------------------------------------------------------
-   Small screens
-   Stack the documentation rail above its content, and let the
-   cards, feature panels, and pricing tiers span the full width
-   instead of sharing a row.
-   ------------------------------------------------------------ */
+/* ===== Small screens ===== */
+
+/* Stack the docs rail above its content; cards, feature panels
+   and pricing tiers span the full width instead of sharing a
+   row. */
 
 @media (max-width: 640px) {
     .doc-layout {

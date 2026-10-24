@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="90" height="90">
+    <!-- Daring Dragon Coffee bean card art: card-dragons-breath -->
+    <ellipse cx="50" cy="50" rx="26" ry="38" fill="#1d0f06"/>
+    <path d="M50 12 C40 30 58 36 50 52 C44 64 56 72 50 88" stroke="#d95d39" stroke-width="5" fill="none"/>
+</svg>
