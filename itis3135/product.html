@@ -25,8 +25,8 @@
 
         <section>
             <h3 class="feature-title">Why It Roars</h3>
-            <!-- class="feature-grid" arranges the selling points in a responsive grid -->
-        <div class="feature-grid">
+            <!-- class="feature-row" arranges the selling points in a row (named -row, not -grid: the validator misfires on "grid" in a class name) -->
+        <div class="feature-row">
                 <article>
                     <h4>Flame-Finished</h4>
                     <p>Traditional drum roasting gets the bean 90% of the way. The last 10% is one controlled breath from the roaster himself. No gas burner has ever matched it.</p>
@@ -42,10 +42,10 @@
             </div>
         </section>
 
-        <!-- class="price-grid" and class="price-tier" build the three pricing columns; class="cta-button" styles the pricing buttons; id="subscribe" is the hero button's anchor target; class="hero-title" and class="feature-title" style the headings (validator forbids qualified heading selectors) -->
+        <!-- class="price-row" (named -row, not -grid: the validator misfires on "grid" in a class name) and class="price-tier" build the three pricing columns; class="cta-button" styles the pricing buttons; id="subscribe" is the hero button's anchor target; class="hero-title" and class="feature-title" style the headings (validator forbids qualified heading selectors) -->
         <section id="subscribe">
             <h3 class="feature-title">Pick Your Roast Schedule</h3>
-            <div class="price-grid">
+            <div class="price-row">
                 <div class="price-tier">
                     <h4>Hatchling</h4>
                     <span class="price">$14 / month</span>

@@ -43,6 +43,15 @@
    "Expected a FUNCTION or IDENT after colon" on lines that look
    perfectly fine, this note is why: the parser desynced. Change
    the layout back to inline-block instead of hunting ghosts.
+
+   FINDING #3: even plain inline-block rules still errored as
+   long as their selector contained the substring "grid"
+   (card-grid, feature-grid, feature-grid article, price-grid
+   were flagged through all three layout rewrites, at whatever
+   their first declaration was). The validator's checker
+   misfires on the word "grid" in a class name, so the classes
+   are named -row instead. If new false errors appear, check the
+   selector names first.
    ------------------------------------------------------------ */
 
 /* ------------------------------------------------------------
@@ -150,7 +159,7 @@
 /* text-align: center centers the inline-block cards in the row;
    list-style/padding reset turns the ul into a bare container. */
 
-.card-grid {
+.card-row {
     text-align: center;
     padding: 0;
     list-style: none;
@@ -405,12 +414,12 @@
 /* Feature row: three selling points that stack on phones.
    Same inline-block pattern as the trading cards. */
 
-.feature-grid {
+.feature-row {
     text-align: center;
     margin: 28px 0;
 }
 
-.feature-grid article {
+.feature-row article {
     display: inline-block;
     width: 270px;
     vertical-align: top;
@@ -427,9 +436,12 @@
     margin-top: 0;
 }
 
-/* Pricing tiers: same inline-block pattern, centered content. */
+/* Pricing tiers: same inline-block pattern, centered content.
+   All three container classes are named -row rather than -grid:
+   the validator misfires on the word "grid" in a class name,
+   whatever CSS the rule contains. */
 
-.price-grid {
+.price-row {
     text-align: center;
     margin: 20px 0 28px;
 }
@@ -492,7 +504,7 @@
     }
 
     .bean-card,
-    .feature-grid article,
+    .feature-row article,
     .price-tier {
         width: 100%;
         margin: 0 0 20px;

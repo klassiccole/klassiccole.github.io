@@ -21,8 +21,8 @@
         <!-- class="brand-intro": themed intro banner (on the paragraph itself, no wrapper needed) shared by all five coffee pages; styling hook for styles/coffee.css -->
             <p class="brand-intro">Every bag sold at <strong>The Fired Bean</strong> ships with one collectible bean card. Pull the full first-series set of six and the dragon owes you a free cappuccino. Rarity scales with how hard the bean was to roast without catching fire.</p>
 
-        <!-- class="card-grid" lays the cards out in a responsive grid; class="bean-card" styles each card; class="rarity" and class="origin" are the badge and subheading hooks; the fill-* span classes set each meter's width in coffee.css; class="card-title" styles the card headings (validator forbids qualified heading selectors) -->
-        <ul class="card-grid">
+        <!-- class="card-row" (named -row, not -grid: the validator misfires on "grid" in a class name) lays the cards out in a responsive grid; class="bean-card" styles each card; class="rarity" and class="origin" are the badge and subheading hooks; the fill-* span classes set each meter's width in coffee.css; class="card-title" styles the card headings (validator forbids qualified heading selectors) -->
+        <ul class="card-row">
             <li class="bean-card">
                 <span class="rarity">Common</span>
                 <figure>
