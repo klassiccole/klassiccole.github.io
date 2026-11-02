@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Everything Pictures</title>
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/default.css">
+
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Everything Pictures</h2>
+
+        <p>
+            A picture on the web is not one decision but four: its format, its
+            pixel dimensions, its file size, and the size it is displayed at.
+            The two images below walk through the same five demonstrations each
+            time — once with a 6,843-pixel landscape photo, and once with an
+            800-pixel photo I took myself. Every derivative is named for what it
+            is, and the originals are never modified.
+        </p>
+
+        <!-- Classes below group the demo rows and distortion examples; their rules live in default.css under the M11 block. -->
+        <!-- Inline widths appear only in the two CSS downsizing demos; every other size is a class. -->
+
+        <section>
+            <h3>Mountain Light by Marek Piwnicki</h3>
+
+            <p>
+                I chose this photo because nature photography is my favorite
+                kind of photography, and this frame has the scale and fine detail
+                the assignment asks for. It was taken by Marek Piwnicki, a
+                landscape and travel photographer from Gdynia, Poland, who
+                publishes his work for free on Pexels. The original is a JPEG,
+                6843 × 3849 pixels, and 4.59 MB.
+            </p>
+
+            <article>
+                <h4>Original Image</h4>
+                <p>
+                    The same frame in four formats. Every link opens in a new
+                    tab so this page stays where it is.
+                </p>
+                <!-- M11 requires these original-image links to open in a new tab, so
+                     they use target="_blank". The general check "same-site links must
+                     not open new tabs" therefore flags them, even though the written
+                     standard allows new tabs for links into another directory (images/).
+                     The assignment requirement wins; this is a known rule conflict. -->
+                <ul class="picture-links">
+                    <li><a href="images/mountains@marekpiwnicki_pexels.jpg" target="_blank">Original JPEG</a></li>
+                    <li><a href="images/mountains@marekpiwnicki_pexels-600x337.gif" target="_blank">GIF conversion</a></li>
+                    <li><a href="images/mountains@marekpiwnicki_pexels-grayscale-600x337.jpg" target="_blank">Greyscale</a></li>
+                    <li><a href="images/mountains@marekpiwnicki_pexels-blackwhite-600x337.jpg" target="_blank">Black and white</a></li>
+                </ul>
+            </article>
+
+            <article>
+                <h4>Downsizing with CSS</h4>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels.jpg"
+                        alt="Wide mountain landscape with dramatic light"
+                        width="6843" height="3849"
+                        style="width: 684px;">
+                    <figcaption>
+                        The full 6843-pixel original displayed at 684px — 10% of
+                        its width — with nothing but inline CSS. The display
+                        shrank; the download did not. It is still a 4.59 MB file.
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h4>Proper Reduction with an Editor</h4>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-600x337.jpg"
+                        alt="Mountain landscape reduced to 600 pixels wide"
+                        width="600" height="337"
+                        class="display-600">
+                    <figcaption>
+                        A real 600 × 337 copy made in an image editor, down to
+                        72 KB. It still gets a CSS width so the browser reserves
+                        the space before the file arrives.
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="demo-grid">
+                <h4>Improper Proportions with CSS</h4>
+                <p>
+                    One dimension stays true while the other is cut by 33%, then
+                    by 33% again. The two on the left are squeezed horizontally;
+                    the two on the right are flattened vertically.
+                </p>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-600x337.jpg"
+                        alt="Mountain landscape squeezed horizontally by one third"
+                        width="600" height="337"
+                        class="pex-narrow-1">
+                    <figcaption>Width −33%</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-600x337.jpg"
+                        alt="Mountain landscape squeezed horizontally by two thirds"
+                        width="600" height="337"
+                        class="pex-narrow-2">
+                    <figcaption>Width −33% again</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-600x337.jpg"
+                        alt="Mountain landscape flattened vertically by one third"
+                        width="600" height="337"
+                        class="pex-short-1">
+                    <figcaption>Height −33%</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-600x337.jpg"
+                        alt="Mountain landscape flattened vertically by two thirds"
+                        width="600" height="337"
+                        class="pex-short-2">
+                    <figcaption>Height −33% again</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h4>Improper Enlarging with CSS</h4>
+                <p>
+                    Both images below display at 600px wide. The second comes
+                    from a file that is only 25% that size, so the browser has to
+                    stretch it to fill the same space.
+                </p>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-600x337.jpg"
+                        alt="Mountain landscape at its proper 600-pixel size"
+                        width="600" height="337"
+                        class="display-600">
+                    <figcaption>
+                        The 600 × 337 file at 600px: sharp, because the file and
+                        the display match.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/mountains@marekpiwnicki_pexels-150x84.jpg"
+                        alt="Mountain landscape enlarged from a tiny 150-pixel file"
+                        width="150" height="84"
+                        class="display-600">
+                    <figcaption>
+                        The 150 × 84 file at the same 600px: soft and blocky,
+                        because a quarter-size file has to be enlarged to get
+                        there.
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>A Perfect Circle in a Motorcycle Mirror</h3>
+
+            <p>
+                I wanted a profile picture that was not a standard selfie, and I
+                was by myself, so I shot myself through the round mirror on my
+                motorcycle. The mirror is a true circle, which makes it the ideal
+                counterweight to a human face. I took this one myself. The
+                original is a WebP, 800 × 800 pixels, and 96.9 KB (0.09 MB).
+            </p>
+
+            <article>
+                <h4>Original Image</h4>
+                <p>
+                    The same frame in four formats. Every link opens in a new
+                    tab so this page stays where it is.
+                </p>
+                <ul class="picture-links">
+                    <li><a href="images/motorcyclemirror@cole.webp" target="_blank">Original WebP</a></li>
+                    <li><a href="images/motorcyclemirror@cole-600x600.gif" target="_blank">GIF conversion</a></li>
+                    <li><a href="images/motorcyclemirror@cole-grayscale-600x600.jpg" target="_blank">Greyscale</a></li>
+                    <li><a href="images/motorcyclemirror@cole-blackwhite-600x600.jpg" target="_blank">Black and white</a></li>
+                </ul>
+            </article>
+
+            <article>
+                <h4>Downsizing with CSS</h4>
+                <figure>
+                    <img src="images/motorcyclemirror@cole.webp"
+                        alt="Cole Dorazio reflected in a round motorcycle mirror"
+                        width="800" height="800"
+                        style="width: 160px;">
+                    <figcaption>
+                        The 800-pixel original displayed at 160px — 20% of its
+                        width — with inline CSS. The file stays 96.9 KB no matter
+                        how small it is drawn.
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h4>Proper Reduction with an Editor</h4>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-600x600.jpg"
+                        alt="Motorcycle mirror reflection reduced to 600 pixels square"
+                        width="600" height="600"
+                        class="display-600">
+                    <figcaption>
+                        A real 600 × 600 copy, down to 42 KB. The CSS width keeps
+                        its space reserved while it loads.
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="demo-grid">
+                <h4>Improper Proportions with CSS</h4>
+                <p>
+                    The circle makes the distortion obvious. One dimension stays
+                    true while the other is cut by 33%, then by 33% again: the two
+                    on the left become vertical ellipses, the two on the right
+                    become horizontal ones.
+                </p>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-600x600.jpg"
+                        alt="Circular mirror reflection squeezed horizontally by one third"
+                        width="600" height="600"
+                        class="mir-narrow-1">
+                    <figcaption>Width −33%</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-600x600.jpg"
+                        alt="Circular mirror reflection squeezed horizontally by two thirds"
+                        width="600" height="600"
+                        class="mir-narrow-2">
+                    <figcaption>Width −33% again</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-600x600.jpg"
+                        alt="Circular mirror reflection flattened vertically by one third"
+                        width="600" height="600"
+                        class="mir-short-1">
+                    <figcaption>Height −33%</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-600x600.jpg"
+                        alt="Circular mirror reflection flattened vertically by two thirds"
+                        width="600" height="600"
+                        class="mir-short-2">
+                    <figcaption>Height −33% again</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h4>Improper Enlarging with CSS</h4>
+                <p>
+                    Both images below display at 600px wide. The second comes
+                    from a file that is only 25% that size, so the browser has to
+                    stretch it to fill the same space.
+                </p>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-600x600.jpg"
+                        alt="Motorcycle mirror reflection at its proper 600-pixel size"
+                        width="600" height="600"
+                        class="display-600">
+                    <figcaption>
+                        The 600 × 600 file at 600px: sharp, because the file and
+                        the display match.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/motorcyclemirror@cole-150x150.jpg"
+                        alt="Motorcycle mirror reflection enlarged from a tiny 150-pixel file"
+                        width="150" height="150"
+                        class="display-600">
+                    <figcaption>
+                        The 150 × 150 file at the same 600px: soft and blocky,
+                        because a quarter-size file has to be enlarged to get
+                        there.
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/include.min.js"></script>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>

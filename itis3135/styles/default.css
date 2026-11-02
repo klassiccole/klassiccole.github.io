@@ -173,6 +173,55 @@ footer {
     margin: 30px auto;
 }
 
+/* M11 pictures page: demo rows and distortion examples. */
+
+.picture-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.picture-links li {
+    margin: 0;
+}
+
+/* The four distortion figures sit in one row and bottom-align for comparison. */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    align-items: end;
+}
+
+.demo-grid > h4,
+.demo-grid > p {
+    grid-column: 1 / -1;
+}
+
+.demo-grid figure {
+    margin: 0;
+}
+
+/* A 600px file shown at 600px reserves its space before it loads. */
+.display-600 {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improper proportions: one dimension stays true, the other is cut 33%, then 33% again. */
+.pex-narrow-1 { width: 107px; height: 90px; }
+.pex-narrow-2 { width: 72px; height: 90px; }
+.pex-short-1 { width: 160px; height: 60px; }
+.pex-short-2 { width: 160px; height: 40px; }
+.mir-narrow-1 { width: 107px; height: 160px; }
+.mir-narrow-2 { width: 72px; height: 160px; }
+.mir-short-1 { width: 160px; height: 107px; }
+.mir-short-2 { width: 160px; height: 72px; }
+
 /* Mobile layout */
 
 @media (max-width: 600px) {
@@ -186,5 +235,9 @@ footer {
 
     blockquote {
         margin: 30px 10px;
+    }
+
+    .demo-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
