@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Introduction Form</title>
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/coffee.css">
+
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main class="layout-alpha">
+        <h2>Introduction Form</h2>
+
+        <!-- class="brand-intro": themed banner paragraph shared with the coffee pages -->
+        <p class="brand-intro"><strong>Build an Introduction</strong> — this form rebuilds my introduction page with whatever you submit. Prefilled with my values so you can meet the dragon.</p>
+
+        <h3>Please Submit the Form Below.</h3>
+
+        <!-- class="coffee-form" scopes the survey styling in coffee.css;
+             every input's id exists to pair it with its label's for attribute -->
+        <form class="coffee-form" id="intro-form" action="#" method="post">
+            <fieldset>
+                <legend>About You</legend>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" value="Daniel" placeholder="Daniel" required>
+
+                <label for="mname">Middle name (optional):</label>
+                <input type="text" id="mname" name="mname" value="C." placeholder="C.">
+
+                <label for="nname">Nickname (optional):</label>
+                <input type="text" id="nname" name="nname" value="Cole" placeholder="Cole">
+
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" value="Dorazio" placeholder="Dorazio" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Acknowledgment</legend>
+                <label for="ack">Acknowledgment statement:</label>
+                <textarea id="ack" name="ack" required placeholder="I acknowledge that this introduction will be publicly available to my classmates and instructor.">I acknowledge that this introduction will be publicly available to my classmates and instructor.</textarea>
+
+                <label for="signoff">Sign-off (initials and date):</label>
+                <input type="text" id="signoff" name="signoff" value="-DCD 08/25/26" placeholder="-XYZ 01/01/26" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Mascot</legend>
+                <label for="madj">Mascot adjective:</label>
+                <input type="text" id="madj" name="madj" value="Daring" placeholder="Daring" required>
+
+                <label for="manimal">Mascot animal:</label>
+                <input type="text" id="manimal" name="manimal" value="Dragon" placeholder="Dragon" required>
+
+                <label for="divider">Divider symbol:</label>
+                <input type="text" id="divider" name="divider" value="~" placeholder="~" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Picture</legend>
+                <p class="brand-intro">
+                    <img src="images/intro.webp"
+                        alt="Daniel Cole Dorazio holding a camera during a photoshoot"
+                        width="150"
+                        height="150"
+                        id="pic-preview"
+                        class="coffee-thumb">
+                </p>
+
+                <label for="picupload">Upload a picture (optional — overrides the default):</label>
+                <input type="file" id="picupload" name="picupload" accept="image/*">
+
+                <label for="piccap">Picture caption:</label>
+                <input type="text" id="piccap" name="piccap" value="With my camera during a photoshoot." placeholder="A caption for the picture." required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Personal Statement</legend>
+                <label for="pstatement">Personal statement (at least three sentences):</label>
+                <textarea id="pstatement" name="pstatement" required placeholder="Tell the class about yourself.">I was born and raised in Charlotte and I love anything related to technology. My main interests are drones, cameras, radios, soldering, and 3D printing. I love to build things for practical use cases and create media that people can enjoy.</textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Main Bullets</legend>
+                <label for="b1">Personal background:</label>
+                <textarea id="b1" name="b1" required placeholder="Where you are from and who you are.">I am Italian and have a large Italian family scattered around the US.</textarea>
+
+                <label for="b2">Professional background:</label>
+                <textarea id="b2" name="b2" required placeholder="What you do for work.">At the moment for work I sell motorcycle gear, parts, and accessories.</textarea>
+
+                <label for="b3">Academic background:</label>
+                <textarea id="b3" name="b3" required placeholder="Degrees and certificates.">Associates in Welding, working on my Bachelors in CS.</textarea>
+
+                <label for="b4">Primary work computer:</label>
+                <textarea id="b4" name="b4" required placeholder="Type, OS, and version.">Custom-built desktop computer running Ubuntu Desktop 24.04 LTS.</textarea>
+
+                <label for="b5">Primary work location:</label>
+                <textarea id="b5" name="b5" required placeholder="Where you work.">Cycle Gear.</textarea>
+
+                <label for="b6">Alternate computer and location:</label>
+                <textarea id="b6" name="b6" required placeholder="Backup computer and where you use it.">Windows 11 ASUS Laptop, and at the coffee shop near me.</textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Courses</legend>
+
+                <!-- each repeating course field set is one .course-row div; class="course-row" is the
+                     hook introduction.js uses to clone/remove rows — no heading exists to section them -->
+                <div class="course-row">
+                    <label for="c-dept-1">Department:</label>
+                    <input type="text" id="c-dept-1" name="c-dept" value="ITCS" placeholder="ITCS" required>
+
+                    <label for="c-num-1">Number:</label>
+                    <input type="text" id="c-num-1" name="c-num" value="3216" placeholder="3216" required>
+
+                    <label for="c-name-1">Course name:</label>
+                    <input type="text" id="c-name-1" name="c-name" value="Intro to Cognitive Science" placeholder="Course title" required>
+
+                    <label for="c-reason-1">Reason:</label>
+                    <textarea id="c-reason-1" name="c-reason" required placeholder="Why you are taking it.">Another credit toward my final degree.</textarea>
+
+                    <button type="button" class="remove-course" aria-label="Remove this course">Remove course</button>
+                </div>
+
+                <div class="course-row">
+                    <label for="c-dept-2">Department:</label>
+                    <input type="text" id="c-dept-2" name="c-dept" value="ITIS" placeholder="ITIS" required>
+
+                    <label for="c-num-2">Number:</label>
+                    <input type="text" id="c-num-2" name="c-num" value="4350" placeholder="4350" required>
+
+                    <label for="c-name-2">Course name:</label>
+                    <input type="text" id="c-name-2" name="c-name" value="Design Prototyping" placeholder="Course title" required>
+
+                    <label for="c-reason-2">Reason:</label>
+                    <textarea id="c-reason-2" name="c-reason" required placeholder="Why you are taking it.">Another step toward my final degree.</textarea>
+
+                    <button type="button" class="remove-course" aria-label="Remove this course">Remove course</button>
+                </div>
+
+                <div class="course-row">
+                    <label for="c-dept-3">Department:</label>
+                    <input type="text" id="c-dept-3" name="c-dept" value="ITIS" placeholder="ITIS" required>
+
+                    <label for="c-num-3">Number:</label>
+                    <input type="text" id="c-num-3" name="c-num" value="3135" placeholder="3135" required>
+
+                    <label for="c-name-3">Course name:</label>
+                    <input type="text" id="c-name-3" name="c-name" value="Front End Web Application Development" placeholder="Course title" required>
+
+                    <label for="c-reason-3">Reason:</label>
+                    <textarea id="c-reason-3" name="c-reason" required placeholder="Why you are taking it.">Relevant to the front end development I like to do in my personal time. And also for my degree.</textarea>
+
+                    <button type="button" class="remove-course" aria-label="Remove this course">Remove course</button>
+                </div>
+
+                <button type="button" id="add-course">Add course</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quote</legend>
+                <label for="quote">Favorite quote:</label>
+                <textarea id="quote" name="quote" required placeholder="A quote you like.">“Where must we go, we who wander this wasteland, in search of our better selves?”</textarea>
+
+                <label for="qauthor">Quote author:</label>
+                <input type="text" id="qauthor" name="qauthor" value="Mad Max: Fury Road" placeholder="Who said it" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Optional Extras</legend>
+                <label for="funny">Funny/interesting item to remember me by (optional):</label>
+                <input type="text" id="funny" name="funny" value="I have played trumpet at Carnegie Hall." placeholder="Something funny or interesting.">
+
+                <label for="share">I'd also like to share (optional):</label>
+                <textarea id="share" name="share" placeholder="Anything else you want to share.">@cyberflightstudios on Instagram, YouTube, and TikTok. My business website is also live and I will be updating it as I learn more from this class this semester. It is technically a work in progress this month.</textarea>
+
+                <label for="sharelink">Share link URL (optional):</label>
+                <input type="text" id="sharelink" name="sharelink" value="https://cyberflight.studio/" placeholder="https://example.com">
+            </fieldset>
+
+            <fieldset>
+                <legend>Footer Links</legend>
+                <label for="l1">CLT Web URL:</label>
+                <input type="text" id="l1" name="l1" value="https://webpages.charlotte.edu/ddorazio/" placeholder="https://webpages.charlotte.edu/~jdoe/" required>
+
+                <label for="l2">GitHub.io URL:</label>
+                <input type="text" id="l2" name="l2" value="https://klassiccole.github.io/" placeholder="https://jdoe.github.io/" required>
+
+                <label for="l3">GitHub URL:</label>
+                <input type="text" id="l3" name="l3" value="https://github.com/klassiccole" placeholder="https://github.com/jdoe" required>
+
+                <label for="l4">freeCodeCamp URL:</label>
+                <input type="text" id="l4" name="l4" value="https://www.freecodecamp.org/klassiccole" placeholder="https://www.freecodecamp.org/jdoe" required>
+
+                <label for="l5">Codecademy URL:</label>
+                <input type="text" id="l5" name="l5" value="https://www.codecademy.com/profiles/board7927921924" placeholder="https://www.codecademy.com/profiles/jdoe" required>
+
+                <label for="l6">LinkedIn URL:</label>
+                <input type="text" id="l6" name="l6" value="https://www.linkedin.com/in/coledorazio/" placeholder="https://www.linkedin.com/in/jdoe/" required>
+            </fieldset>
+
+            <!-- .form-buttons groups the three buttons in one visual row; class="form-buttons" is
+                 a styling hook for coffee.css if the row ever needs spacing tweaks -->
+            <div class="form-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button" id="clear-form">Clear</button>
+            </div>
+        </form>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/include.min.js"></script>
+    <script src="scripts/introduction.js"></script>
+</body>
+</html>
