@@ -189,19 +189,21 @@ footer {
 }
 
 /* The four distortion figures sit in one row and bottom-align for comparison. */
-.demo-grid {
+.demo-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     align-items: end;
 }
 
-.demo-grid > h4,
-.demo-grid > p {
+/* class="row-title"/"row-note": full-width caption row inside .demo-row; kept as
+   standalone classes so the heading stays unqualified for the CSS validator */
+.row-title,
+.row-note {
     grid-column: 1 / -1;
 }
 
-.demo-grid figure {
+.demo-row figure {
     margin: 0;
 }
 
@@ -237,7 +239,7 @@ footer {
         margin: 30px 10px;
     }
 
-    .demo-grid {
+    .demo-row {
         grid-template-columns: repeat(2, 1fr);
     }
 }
