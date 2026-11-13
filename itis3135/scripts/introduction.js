@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const picInput = document.getElementById("picupload");
     const picPreview = document.getElementById("pic-preview");
     const DEFAULT_PICTURE = "images/intro.webp";
-    /* Absolute URL for the class API and any app consuming introductionData. */
-    const PUBLIC_PICTURE = "https://webpages.charlotte.edu/ddorazio/itis3135/images/intro.webp";
     let courseCount = form.querySelectorAll(".course-row").length;
 
     /* --- helpers, used by everything below --- */
@@ -61,8 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return uploadedImage ? uploadedImage : DEFAULT_PICTURE;
     }
 
+    /* The class API requires a relative path in the img field. */
     function jsonImgSrc() {
-        return uploadedImage ? uploadedImage : PUBLIC_PICTURE;
+        return DEFAULT_PICTURE;
     }
 
     /* The sign-off reads "-DCD 08/25/26"; the schema wants just the date part. */
