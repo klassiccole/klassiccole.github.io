@@ -1,0 +1,55 @@
+{
+  "firstName": "Daniel",
+  "middleName": "C.",
+  "nickname": "Cole",
+  "lastName": "Dorazio",
+  "acknowledgment": "I acknowledge that this introduction will be publicly available to my classmates and instructor.",
+  "acknowledgmentDate": "08/25/26",
+  "prettyNameDivider": "~",
+  "adjectives": "Daring",
+  "animal": "Dragon",
+  "img": "https://webpages.charlotte.edu/ddorazio/itis3135/images/intro.webp",
+  "pictureAlt": "Daniel Cole Dorazio holding a camera during a photoshoot",
+  "caption": "With my camera during a photoshoot.",
+  "personalInfo": {
+    "statement": "I was born and raised in Charlotte and I love anything related to technology. My main interests are drones, cameras, radios, soldering, and 3D printing. I love to build things for practical use cases and create media that people can enjoy.",
+    "personalBackground": "I am Italian and have a large Italian family scattered around the US.",
+    "professionalBackground": "At the moment for work I sell motorcycle gear, parts, and accessories.",
+    "academicBackground": "Associates in Welding, working on my Bachelors in CS.",
+    "primaryWorkComputer": "Custom-built desktop computer running Ubuntu Desktop 24.04 LTS.",
+    "primaryWorkLocation": "Cycle Gear.",
+    "alternateComputerLocation": "Windows 11 ASUS Laptop, and at the coffee shop near me."
+  },
+  "courses": [
+    {
+      "department": "ITCS",
+      "courseNumber": "3216",
+      "courseTitle": "Intro to Cognitive Science",
+      "reasonForTaking": "Another credit toward my final degree."
+    },
+    {
+      "department": "ITIS",
+      "courseNumber": "4350",
+      "courseTitle": "Design Prototyping",
+      "reasonForTaking": "Another step toward my final degree."
+    },
+    {
+      "department": "ITIS",
+      "courseNumber": "3135",
+      "courseTitle": "Front End Web Application Development",
+      "reasonForTaking": "Relevant to the front end development I like to do in my personal time. And also for my degree."
+    }
+  ],
+  "quote": "“Where must we go, we who wander this wasteland, in search of our better selves?”",
+  "quoteAuthor": "Mad Max: Fury Road",
+  "funnyItem": "I have played trumpet at Carnegie Hall.",
+  "somethingToShare": "@cyberflightstudios on Instagram, YouTube, and TikTok. My business website is also live and I will be updating it as I learn more from this class this semester. It is technically a work in progress this month.",
+  "footerLinks": [
+    { "label": "CLT Web", "url": "https://webpages.charlotte.edu/ddorazio/" },
+    { "label": "GitHub.io", "url": "https://klassiccole.github.io/" },
+    { "label": "GitHub", "url": "https://github.com/klassiccole" },
+    { "label": "freeCodeCamp", "url": "https://www.freecodecamp.org/klassiccole" },
+    { "label": "Codecademy", "url": "https://www.codecademy.com/profiles/board7927921924" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/coledorazio/" }
+  ]
+}
