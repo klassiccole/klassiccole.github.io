@@ -1,0 +1,87 @@
+/* Class Introductions page (M14): fetch-driven roster styling.
+   Class names avoid the word "grid" (known Accumulus selector misfire). */
+
+/* class="spotlight-card": newest submission card; photo floats left like the
+   header logo, and flow-root keeps the border around the float. */
+.spotlight-card {
+    display: flow-root;
+    border: 1px solid #d8cfc4;
+    border-radius: 8px;
+    padding: 16px 20px;
+}
+
+.spotlight-card img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 20px 10px 0;
+}
+
+.spotlight-card p {
+    margin: 6px 0;
+}
+
+/* class="roster-row": wrapping flex row of classmate cards. */
+.roster-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: stretch;
+}
+
+/* class="roster-card": one classmate per card; classmate photos come from the
+   API as data URLs, so they are intentionally not in images/ (assignment
+   exception for this page). */
+.roster-card {
+    flex: 1 1 200px;
+    max-width: 240px;
+    border: 1px solid #d8cfc4;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    margin: 0;
+}
+
+.roster-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.roster-card p {
+    margin: 6px 0 0;
+}
+
+/* class="stat-strip": inline list of quick counts. */
+.stat-strip {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.stat-strip li {
+    margin: 0;
+}
+
+/* class="load-error": friendly message when the class API cannot be reached. */
+.load-error {
+    font-weight: bold;
+}
+
+/* Mobile: cards go single column, spotlight photo sits above the text. */
+@media (max-width: 600px) {
+    .roster-card {
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    .spotlight-card img {
+        float: none;
+        margin: 0 0 10px;
+    }
+}

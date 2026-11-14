@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Dorazio's Daring Dragon | ITIS3135 | Class Introductions</title>
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/class-intro.css">
+
+    <!-- class="intro-card" etc.: see styles/class-intro.css; comment noted there -->
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Class Introductions</h2>
+
+        <p>
+            Everyone in the class submitted their introduction through the
+            introduction form, and this page pulls the whole set live from the
+            class server. Meet the rest of the den.
+        </p>
+
+        <section class="spotlight">
+            <h3>Newest in the Den</h3>
+            <!-- id="spotlight": hook scripts/class-intro.js fills with the most recent submission;
+                 the h4 below is its static heading, renamed by the script to the submitter's name -->
+            <article id="spotlight" class="spotlight-card">
+                <h4 id="spotlight-heading">Waiting for the class server…</h4>
+            </article>
+        </section>
+
+        <section class="roster">
+            <h3>The Roster</h3>
+            <!-- id="roster": hook scripts/class-intro.js fills with one card per classmate.
+                 class="roster-row": flex row hook in styles/class-intro.css -->
+            <div id="roster" class="roster-row"></div>
+        </section>
+
+        <section class="stats">
+            <h3>By the Numbers</h3>
+            <!-- id="stats": hook scripts/class-intro.js fills with quick counts.
+                 class="stat-strip": inline list hook in styles/class-intro.css -->
+            <ul id="stats" class="stat-strip"></ul>
+        </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/class-intro.js"></script>
+    <script src="scripts/include.min.js"></script>
+</body>
+</html>
