@@ -84,9 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const name = row.querySelector('input[name="c-name"]').value.trim();
             const reason = row.querySelector('textarea[name="c-reason"]').value.trim();
             if (dept || num || name || reason) {
+                /* This course's item links to the contract, per the introduction page rules. */
+                const isThisCourse = dept.toUpperCase() === "ITIS" && num === "3135";
+                const title = isThisCourse
+                    ? '<a href="contract.html">' + esc(name) + '</a>'
+                    : esc(name);
                 items.push(
                     '<li><strong>' + esc(dept) + ' ' + esc(num) + ' - ' +
-                    esc(name) + ':</strong> ' + esc(reason) + '</li>'
+                    title + ':</strong> ' + esc(reason) + '</li>'
                 );
             }
         });
@@ -108,11 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* Colors and fonts come from styles/default.css, exactly like introduction.html. */
+    /* Colors and fonts come from styles/default.css, exactly like introduction.html.
+       The acknowledgment is collected for the class API but is a doc-only item
+       and is not rendered on the page, matching introduction.html. */
     function pageContent(pageHeading) {
         const html = [];
         html.push('<h2>' + pageHeading + '</h2>');
-        html.push('<p>' + esc(field("ack")) + ' <em>' + esc(field("signoff")) + '</em></p>');
         html.push(
             '<figure class="intro-photo">' +
             '<img src="' + pictureSrc() + '"' +
@@ -324,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        main.innerHTML = '<h2>Introduction Form</h2>\n' + pageContent("Introduction Form") +
+        main.innerHTML = pageContent("Introduction Form") +
             '<p><a href="introduction_form.html">Go again</a></p>';
         window.scrollTo(0, 0);
     });

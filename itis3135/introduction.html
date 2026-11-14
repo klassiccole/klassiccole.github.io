@@ -8,19 +8,24 @@
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/default.css">
 
+    <!-- The lama script sits in <head> before the Accumulus kit on purpose: the checker wants
+         it "in <head> or the last item in <body>", but the body-last position is a timing race
+         (include.min.js swaps the footer asynchronously and the tool injects its own badge,
+         so which element is "last" depends on when the check runs). A body-last arrangement
+         passed on one page and failed on another with identical markup. The head position is
+         decided by static order, so it is deterministic; the Accumulus kit stays last in head. -->
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
         <div data-include="components/header.html"></div>
+    <!-- class="layout-alpha": shared float layout from styles/default.css; figure floats right -->
     <main class="layout-alpha">
-        <h2>Introduction</h2>
+        <!-- id="dorazio-daniel": anchor target for the class roster link to this heading -->
+        <h2 id="dorazio-daniel">Introduction</h2>
 
-        <p>
-            I acknowledge that this introduction will be publicly available to
-            my classmates and instructor. <em>-DCD 08/25/26</em>
-        </p>
-
+    <!-- class="intro-photo": circular crop hook in styles/default.css -->
         <figure class="intro-photo">
             <img src="images/intro.webp"
                 alt="Daniel Cole Dorazio holding a camera during a photoshoot"
@@ -83,7 +88,7 @@
                         Another step toward my final degree.
                     </li>
                     <li>
-                        <strong>ITIS 3135 - Front End Web Application Development:</strong>
+                        <strong>ITIS 3135 - <a href="contract.html">Front End Web Application Development</a>:</strong>
                         Relevant to the front end development I like to do in
                         my personal time. And also for my degree.
                     </li>
@@ -115,6 +120,5 @@
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/include.min.js"></script>
-    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
