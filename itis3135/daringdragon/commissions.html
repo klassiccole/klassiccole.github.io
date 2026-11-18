@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daring Dragon | Commissions</title>
+
+    <link rel="icon" href="images/logo-mark.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/default.css">
+
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Commissions</h2>
+
+        <p class="lede">
+            Want your own character on the table? Send us the idea and we
+            print it. Commissions run from a rescaled version of an existing
+            sculpt to a fully custom model of your character sheet.
+        </p>
+
+        <figure>
+            <img src="images/forge.svg"
+                alt="A 3D printer mid-print with filament spools stacked beside it"
+                width="260"
+                height="190">
+            <figcaption>The forge in action: spools in, miniatures out.</figcaption>
+        </figure>
+
+        <section class="process">
+            <h3>How a Commission Works</h3>
+
+            <p>
+                First we talk. You send references — a character sheet, a
+                sketch, a description — and we agree on the sculpt, the size,
+                and the filament or paint finish. Nothing starts printing
+                until you have seen the plan.
+            </p>
+
+            <p>
+                Then the forge runs. Small pieces finish in a day or two;
+                larger or custom-sculpted pieces take up to two weeks. You get
+                photos of the finished print before it is packed, and a redo
+                is free if the print arrives flawed.
+            </p>
+        </section>
+
+        <section class="estimate">
+            <h3>Estimate Your Order</h3>
+
+            <!-- id="estimate-size" and id="estimate-finish": hooks for the live
+                 price total in scripts/site.js; class="estimate-form": form styling -->
+            <form class="estimate-form" action="#" method="post">
+                <label for="estimate-size">Size</label>
+                <!-- select id="estimate-size": hook for the live total in scripts/site.js -->
+                <select id="estimate-size" name="estimate-size">
+                    <option value="wyrmling">Wyrmling (about 2 in) &mdash; $15</option>
+                    <option value="adult">Adult (about 4 in) &mdash; $30</option>
+                    <option value="ancient">Ancient (about 6 in) &mdash; $60</option>
+                </select>
+
+                <label for="estimate-finish">Finish</label>
+                <!-- select id="estimate-finish": hook for the live total in scripts/site.js -->
+                <select id="estimate-finish" name="estimate-finish">
+                    <option value="unpainted">Unpainted, ready for primer &mdash; included</option>
+                    <option value="painted">Hand-painted &mdash; +$20</option>
+                </select>
+
+                <!-- class="estimate-total": the live total readout -->
+                <p class="estimate-total">Estimated total: <strong id="estimate-total">$15</strong></p>
+            </form>
+
+            <p>
+                The estimate above is a starting point. Final quotes can shift
+                with sculpting time, but we confirm everything with you before
+                the printer warms up.
+            </p>
+        </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/include.min.js"></script>
+    <script src="scripts/site.js"></script>
+</body>
+</html>

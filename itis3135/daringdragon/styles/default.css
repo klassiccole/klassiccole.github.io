@@ -1,0 +1,312 @@
+/* Daring Dragon — hand-forged miniature studio site.
+   Ember palette: near-black forge background, ember orange, aged gold.
+   Class names avoid the word "grid" (documented Accumulus selector misfire). */
+
+:root {
+    --bg: #17120e;
+    --surface: #241b14;
+    --surface-2: #2f2318;
+    --line: #4a3a28;
+    --ember: #ff7a2f;
+    --ember-dark: #d95b1e;
+    --gold: #ffc857;
+    --text: #f3ead8;
+    --muted: #b8a68c;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Lato, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    line-height: 1.65;
+}
+
+h1 {
+    font-family: Cinzel, Georgia, serif;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    font-size: 2.2rem;
+    margin-bottom: 4px;
+}
+
+h2 {
+    font-family: Cinzel, Georgia, serif;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    font-size: 1.7rem;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: Cinzel, Georgia, serif;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-family: Cinzel, Georgia, serif;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+    margin: 8px 0 4px;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+header {
+    display: flow-root;
+    border-bottom: 3px double var(--ember);
+    padding-bottom: 16px;
+}
+
+/* The logo sits left of the shop name and nav to keep the masthead compact. */
+header img {
+    float: left;
+    margin: 4px 20px 0 0;
+}
+
+nav {
+    margin: 12px 0 0;
+}
+
+nav a {
+    color: var(--ember);
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: var(--ember);
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+main {
+    margin: 24px 0 32px;
+}
+
+section {
+    margin: 36px 0;
+}
+
+figure {
+    margin: 24px auto;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* class="lede": the opening paragraph of each page, slightly larger. */
+.lede {
+    font-size: 1.15rem;
+    color: var(--text);
+}
+
+/* class="slogan": the shop tagline in the footer; em provides the italics. */
+.slogan {
+    color: var(--gold);
+    font-size: 1.05rem;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 3px double var(--ember);
+    font-size: 0.9rem;
+}
+
+footer nav {
+    margin: 0 0 10px;
+}
+
+/* Slideshow on the home page. */
+
+/* class="slide-frame": the visible slideshow image area. */
+.slide-frame img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border: 2px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+/* class="slide-caption": description under the slideshow image. */
+.slide-caption {
+    font-style: italic;
+    color: var(--muted);
+    min-height: 1.4em;
+    margin: 10px 0;
+}
+
+/* class="slide-button": the prev/next controls. */
+.slide-button {
+    background-color: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.slide-button:hover,
+.slide-button:focus {
+    background-color: var(--ember-dark);
+    border-color: var(--ember);
+}
+
+/* The Hoard: filter buttons and product cards. */
+
+/* class="filter-row": the category filter buttons row. */
+.filter-row {
+    margin-bottom: 20px;
+}
+
+/* class="filter-button": category selector; .filter-on marks the active one. */
+.filter-button {
+    background-color: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 18px;
+    margin: 0 8px 8px 0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+    border-color: var(--ember);
+}
+
+.filter-on {
+    background-color: var(--ember-dark);
+    border-color: var(--ember);
+    color: var(--bg);
+    font-weight: bold;
+}
+
+/* class="hoard-row": wrapping flex row of product cards. */
+.hoard-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* class="hoard-card": one product; data-kind marks its filter category. */
+.hoard-card {
+    flex: 1 1 220px;
+    max-width: 270px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+.hoard-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hoard-card p {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+/* class="price": the price line on each card. */
+.price {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Commission estimator form. */
+
+/* class="estimate-form": the two selects and the total readout. */
+.estimate-form label {
+    display: block;
+    margin: 14px 0 4px;
+    font-weight: bold;
+}
+
+.estimate-form select {
+    background-color: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    min-width: 220px;
+}
+
+/* class="estimate-total": the live price readout. */
+.estimate-total {
+    margin-top: 16px;
+    font-size: 1.2rem;
+}
+
+.estimate-total strong {
+    color: var(--gold);
+}
+
+/* Events list. */
+
+/* class="event-list": the upcoming events table-free list. */
+.event-list li {
+    margin-bottom: 14px;
+}
+
+.event-list strong {
+    color: var(--gold);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    header img {
+        float: none;
+        margin: 0 auto 8px;
+    }
+
+    .hoard-card {
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    nav {
+        line-height: 2;
+    }
+}

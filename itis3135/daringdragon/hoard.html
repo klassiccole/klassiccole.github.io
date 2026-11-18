@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daring Dragon | The Hoard</title>
+
+    <link rel="icon" href="images/logo-mark.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/default.css">
+
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>The Hoard</h2>
+
+        <p class="lede">
+            Everything currently on the shelf. Dragons come in three filament
+            runs and the adventurers are sculpted in-house. Every miniature is
+            printed at high detail and inspected by hand before it ships.
+        </p>
+
+        <!-- id="hoard-filters": hook for the category filter in scripts/site.js.
+             class="filter-row" and class="filter-button": styled in styles/default.css;
+             data-kind on each button matches data-kind on the cards it reveals. -->
+        <p class="filter-row" id="hoard-filters">
+            <button type="button" class="filter-button filter-on" data-kind="all">All</button>
+            <button type="button" class="filter-button" data-kind="dragon">Dragons</button>
+            <button type="button" class="filter-button" data-kind="hero">Heroes</button>
+        </p>
+
+        <!-- id="hoard-cards": the card row filtered by scripts/site.js.
+             class="hoard-row": flex row hook in styles/default.css -->
+        <div id="hoard-cards" class="hoard-row">
+
+            <!-- class="hoard-card": one product card; data-kind drives the filter -->
+            <article class="hoard-card" data-kind="dragon">
+                <img src="images/mini-ember.jpg"
+                    alt="Ember Wyrmling dragon miniature in ember orange"
+                    width="140" height="140">
+                <h4>Ember Wyrmling</h4>
+                <p>Our starter dragon. Small, friendly, and ready to guard a dice bag.</p>
+                <p class="price">$15</p>
+            </article>
+
+            <article class="hoard-card" data-kind="dragon">
+                <img src="images/mini-gold.jpg"
+                    alt="Hoard Dragon miniature printed in aged gold filament"
+                    width="140" height="140">
+                <h4>Hoard Dragon</h4>
+                <p>The wyrmling sculpt in aged-gold filament. Looks great unpainted.</p>
+                <p class="price">$18</p>
+            </article>
+
+            <article class="hoard-card" data-kind="dragon">
+                <img src="images/mini-forest.jpg"
+                    alt="Forest Guardian dragon miniature printed in moss green"
+                    width="140" height="140">
+                <h4>Forest Guardian</h4>
+                <p>A moss-green run for druids, rangers, and swamp campaigns.</p>
+                <p class="price">$18</p>
+            </article>
+
+            <article class="hoard-card" data-kind="dragon">
+                <img src="images/mini-d20.jpg"
+                    alt="Dice Guardian dragon curled around a twenty-sided die"
+                    width="140" height="140">
+                <h4>Dice Guardian</h4>
+                <p>A dragon coiled around a d20. For the superstitious roller.</p>
+                <p class="price">$22</p>
+            </article>
+
+            <article class="hoard-card" data-kind="hero">
+                <img src="images/cleric.svg"
+                    alt="Dawn Cleric miniature with hooded robe and gilded staff"
+                    width="170" height="200">
+                <h4>Dawn Cleric</h4>
+                <p>Hooded, staff in hand. The one who keeps the party standing.</p>
+                <p class="price">$12</p>
+            </article>
+
+            <article class="hoard-card" data-kind="hero">
+                <img src="images/ranger.svg"
+                    alt="Wandering Ranger miniature with longbow and quiver"
+                    width="170" height="200">
+                <h4>Wandering Ranger</h4>
+                <p>Bow strung, quiver full. Fits any 28 mm scale party.</p>
+                <p class="price">$12</p>
+            </article>
+        </div>
+
+        <section class="hoard-note">
+            <h3>What You Get</h3>
+
+            <p>
+                Every order ships as a cleaned, checked print in your chosen
+                color. Minis arrive ready for primer, or you can add a
+                hand-painted finish through a
+                <a href="commissions.html">commission</a>.
+            </p>
+
+            <p>
+                Prices include printing and packaging. Local pickup at one of
+                our <a href="events.html">events</a> knocks off the shipping
+                cost entirely.
+            </p>
+        </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/include.min.js"></script>
+    <script src="scripts/site.js"></script>
+</body>
+</html>

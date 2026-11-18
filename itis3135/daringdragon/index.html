@@ -4,64 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Daring Dragon | Coming Soon</title>
+    <title>Daring Dragon | Home</title>
 
-    <link rel="icon" href="../images/favicon.png">
+    <link rel="icon" href="images/logo-mark.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/default.css">
 
-    <style>
-        /* Stub page for M14B Part A: folder and files are set up; the full
-           site with its own look and feel ships in the next part. */
-
-        body {
-            background-color: #1c1030;
-            color: #f5efe4;
-            font-family: Verdana, sans-serif;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px;
-            line-height: 1.7;
-        }
-
-        h1 {
-            font-family: Georgia, serif;
-            color: #ffb347;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: Georgia, serif;
-            color: #ff5fa2;
-        }
-    </style>
-
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Daring Dragon</h1>
-    </header>
+    <div data-include="components/header.html"></div>
 
     <main>
-        <h2>Coming Soon</h2>
+        <h2>Home</h2>
 
-        <p>
-            Daring Dragon is a small studio that 3D prints dragons and other
-            characters for tabletop gamers. Every miniature is printed,
-            cleaned, and checked by hand before it ships.
+        <p class="lede">
+            Daring Dragon prints dragons, heroes, and everything else your
+            table has been missing. Every miniature comes off our own printer,
+            gets checked by hand, and ships ready for your dice.
         </p>
 
-        <p>
-            The full site is being forged right now. When it arrives it will
-            cover what we print, how orders work, and how to get your party
-            its own dragon.
-        </p>
+        <figure>
+            <img src="images/hero-dragon.jpg"
+                alt="An ember orange dragon curled around a golden twenty-sided die"
+                width="480"
+                height="480">
+            <figcaption>The shop mascot, guarding a very lucky d20.</figcaption>
+        </figure>
+
+        <section class="showcase">
+            <h3>Straight from the Print Bed</h3>
+
+            <!-- class="slide-frame": the visible slideshow image; site.js swaps its src -->
+            <figure class="slide-frame">
+                <img src="images/mini-ember.jpg"
+                    alt="Slideshow of Daring Dragon miniatures"
+                    width="480"
+                    height="480">
+            </figure>
+
+            <!-- id="slide-prev" and id="slide-next": hooks for the slideshow controls -->
+            <p>
+                <button type="button" class="slide-button" id="slide-prev">&larr; Prev</button>
+                <button type="button" class="slide-button" id="slide-next">Next &rarr;</button>
+            </p>
+
+            <!-- class="slide-caption": caption text swapped by site.js with each slide -->
+            <p class="slide-caption">Ember Wyrmling &mdash; the starter dragon.</p>
+        </section>
+
+        <section class="about-teaser">
+            <h3>Small Shop, Sharp Details</h3>
+
+            <p>
+                We keep the catalog tight on purpose: a handful of dragon
+                sculpts and a growing line of adventurers, printed in the
+                filament color that fits your campaign. Want something that
+                exists nowhere else? That is what commissions are for.
+            </p>
+
+            <p>
+                Browse <a href="hoard.html">The Hoard</a> for what is on the
+                shelf, or read how a custom order goes from sketch to table on
+                the <a href="commissions.html">Commissions</a> page.
+            </p>
+        </section>
     </main>
 
-    <footer>
-        <p>Designed by Dorazio Designs</p>
-    </footer>
+    <div data-include="components/footer.html"></div>
 
-    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <script src="scripts/include.min.js"></script>
+    <script src="scripts/site.js"></script>
 </body>
 </html>

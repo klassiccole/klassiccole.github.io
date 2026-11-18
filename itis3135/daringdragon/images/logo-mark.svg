@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="56" fill="#241b14"/>
+  <!-- chibi dragon head, facing left -->
+  <circle cx="56" cy="62" r="30" fill="#ff7a2f"/>
+  <rect x="14" y="56" width="30" height="17" rx="8.5" fill="#ff7a2f"/>
+  <circle cx="22" cy="64" r="1.8" fill="#17120e"/>
+  <circle cx="34" cy="64" r="1.8" fill="#17120e"/>
+  <path d="M20 68 Q30 74 44 69" fill="none" stroke="#17120e" stroke-width="1.6" stroke-linecap="round"/>
+  <ellipse cx="46" cy="56" rx="6" ry="7.5" fill="#17120e"/>
+  <circle cx="48" cy="54" r="2.2" fill="#f3ead8"/>
+  <ellipse cx="62" cy="55" rx="6" ry="7.5" fill="#17120e"/>
+  <circle cx="64" cy="53" r="2.2" fill="#f3ead8"/>
+  <path d="M44 38 L36 20 L56 36 Z" fill="#ffc857"/>
+  <path d="M62 36 L70 20 L72 40 Z" fill="#ffc857"/>
+  <!-- tiny wing tip peeking behind -->
+  <path d="M74 44 L94 24 L98 56 Z" fill="#d95b1e"/>
+  <!-- little fire puff -->
+  <circle cx="8" cy="52" r="3.5" fill="#ffc857" opacity="0.9"/>
+  <circle cx="2" cy="60" r="2.2" fill="#ff7a2f" opacity="0.8"/>
+</svg>
